@@ -38,6 +38,9 @@
 
 ### Qui connait Docker / Kubernetes ?
 
+* :thumbs-up: dans le chat si vous connaissez
+* :thumbs-down: dans le chat si vous connaissez
+
 ----
 
 ## How to explore this doc

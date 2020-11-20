@@ -48,8 +48,8 @@ Lorsqu'une demande est faite de scaler les pods, HPA s'occupe de démarrer les p
 
 ### Deployment
 
-Un déploiement est la manière de déployer un pod
-> Un déploiement est déclaratif, c'est-à-dire que Kubernetes va s'assurer que le nombre de pods est toujours celui demandé
+* Un déploiement est la manière de déployer un pod
+* Un déploiement est déclaratif, c'est-à-dire que Kubernetes va s'assurer que le nombre de pods est toujours celui demandé
 
 <img src="https://d33wubrfki0l68.cloudfront.net/152c845f25df8e69dd24dd7b0836a289747e258a/4a1d2/docs/tutorials/kubernetes-basics/public/images/module_02_first_app.svg" style="background:none; border:none; box-shadow:none;" width="45%"/>
 
