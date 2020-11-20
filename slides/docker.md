@@ -85,7 +85,7 @@ cgroups (control groups) est une fonctionnalité du noyau Linux pour limiter, co
 ### Cgroups (control groups)
 
 <img src="img/cgroups.png" style="background:none; border:none; box-shadow:none;"/>
-<br/>
+
 [more on cgroups](https://mairin.wordpress.com/2011/05/13/ideas-for-a-cgroups-ui/)
 
 ----

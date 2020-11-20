@@ -36,7 +36,7 @@ Cependant, il ne répond pas à des contraintes de production
 
 Un pod est un regroupement de container au sein d'une même unité
 
-<img src="https://d33wubrfki0l68.cloudfront.net/5cb72d407cbe2755e581b6de757e0d81760d5b86/a9df9/docs/tutorials/kubernetes-basics/public/images/module_03_nodes.svg" style="background:none; border:none; box-shadow:none;"/>
+<img src="https://d33wubrfki0l68.cloudfront.net/5cb72d407cbe2755e581b6de757e0d81760d5b86/a9df9/docs/tutorials/kubernetes-basics/public/images/module_03_nodes.svg" style="background:none; border:none; box-shadow:none;" width="50%"/>
 
 ----
 
@@ -52,7 +52,7 @@ Un déploiement est la manière de déployer un pod
 
 Un déploiement est déclaratif, c'est-à-dire que Kubernetes va s'assurer que le nombre de pods est toujours celui demandé
 
-<img src="https://d33wubrfki0l68.cloudfront.net/152c845f25df8e69dd24dd7b0836a289747e258a/4a1d2/docs/tutorials/kubernetes-basics/public/images/module_02_first_app.svg" style="background:none; border:none; box-shadow:none;"/>
+<img src="https://d33wubrfki0l68.cloudfront.net/152c845f25df8e69dd24dd7b0836a289747e258a/4a1d2/docs/tutorials/kubernetes-basics/public/images/module_02_first_app.svg" style="background:none; border:none; box-shadow:none;" width="90%"/>
 
 ----
 
@@ -64,7 +64,7 @@ Un service expose une adresse IP, ainsi qu'un port
 
 Il joue le role de load-balancer
 
-<img src="https://d33wubrfki0l68.cloudfront.net/cc38b0f3c0fd94e66495e3a4198f2096cdecd3d5/ace10/docs/tutorials/kubernetes-basics/public/images/module_04_services.svg" style="background:none; border:none; box-shadow:none;"/>
+<img src="https://d33wubrfki0l68.cloudfront.net/cc38b0f3c0fd94e66495e3a4198f2096cdecd3d5/ace10/docs/tutorials/kubernetes-basics/public/images/module_04_services.svg" style="background:none; border:none; box-shadow:none;" width="80%"/>
 
 ----
 
@@ -153,25 +153,25 @@ data:
 
 ### Rolling update
 
-<img src="https://d33wubrfki0l68.cloudfront.net/30f75140a581110443397192d70a4cdb37df7bfc/fa906/docs/tutorials/kubernetes-basics/public/images/module_06_rollingupdates1.svg" style="background:none; border:none; box-shadow:none;"/>
+<img src="https://d33wubrfki0l68.cloudfront.net/30f75140a581110443397192d70a4cdb37df7bfc/fa906/docs/tutorials/kubernetes-basics/public/images/module_06_rollingupdates1.svg" style="background:none; border:none; box-shadow:none;" width="70%"/>
 
 ----
 
 ### Rolling update
 
-<img src="https://d33wubrfki0l68.cloudfront.net/678bcc3281bfcc588e87c73ffdc73c7a8380aca9/703a2/docs/tutorials/kubernetes-basics/public/images/module_06_rollingupdates2.svg" style="background:none; border:none; box-shadow:none;"/>
+<img src="https://d33wubrfki0l68.cloudfront.net/678bcc3281bfcc588e87c73ffdc73c7a8380aca9/703a2/docs/tutorials/kubernetes-basics/public/images/module_06_rollingupdates2.svg" style="background:none; border:none; box-shadow:none;" width="70%"/>
 
 ----
 
 ### Rolling update
 
-<img src="https://d33wubrfki0l68.cloudfront.net/9b57c000ea41aca21842da9e1d596cf22f1b9561/91786/docs/tutorials/kubernetes-basics/public/images/module_06_rollingupdates3.svg" style="background:none; border:none; box-shadow:none;"/>
+<img src="https://d33wubrfki0l68.cloudfront.net/9b57c000ea41aca21842da9e1d596cf22f1b9561/91786/docs/tutorials/kubernetes-basics/public/images/module_06_rollingupdates3.svg" style="background:none; border:none; box-shadow:none;" width="70%"/>
 
 ----
 
 ### Rolling update
 
-<img src="https://d33wubrfki0l68.cloudfront.net/6d8bc1ebb4dc67051242bc828d3ae849dbeedb93/fbfa8/docs/tutorials/kubernetes-basics/public/images/module_06_rollingupdates4.svg" style="background:none; border:none; box-shadow:none;"/>
+<img src="https://d33wubrfki0l68.cloudfront.net/6d8bc1ebb4dc67051242bc828d3ae849dbeedb93/fbfa8/docs/tutorials/kubernetes-basics/public/images/module_06_rollingupdates4.svg" style="background:none; border:none; box-shadow:none;" width="70%"/>
 
 ----
 
