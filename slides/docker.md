@@ -4,43 +4,43 @@
 
 ### Le challenge
 
-![Image](img/the-challenge.png)
+<img src="img/the-challenge.png" style="background:none; border:none; box-shadow:none;"/>
 
 ----
 
 ### La matrice de l'enfer
 
-<img src="img/the-matrix-from-hell.png" width="70%" />
+<img src="img/the-matrix-from-hell.png" style="background:none; border:none; box-shadow:none;"/>
 
 ----
 
 ### Le transport par cargo avant 1960
 
-![Image](img/cargo-transport-pre-1960.png)
+<img src="img/cargo-transport-pre-1960.png" style="background:none; border:none; box-shadow:none;"/>
 
 ----
 
 ### Aussi une matrice de l'enfer
 
-![Image](img/also-a-matrix-from-hell.png)
+<img src="img/also-a-matrix-from-hell.png" style="background:none; border:none; box-shadow:none;"/>
 
 ----
 
 ### La solution : le conteneur intermodal
 
-![Image](img/intermodal-shipping-container.png)
+<img src="img/intermodal-shipping-container.png" style="background:none; border:none; box-shadow:none;"/>
 
 ----
 
 ### Docker est un conteneur pour le code
 
-![Image](img/shipping-container-for-code.png)
+<img src="img/shipping-container-for-code.png" style="background:none; border:none; box-shadow:none;"/>
 
 ----
 
 ### Docker résoud la matrice de l'enfer
 
-<img src="img/eliminates-matrix-from-hell.png" width="70%" />
+<img src="img/eliminates-matrix-from-hell.png" style="background:none; border:none; box-shadow:none;"/>
 
 ----
 
@@ -60,31 +60,39 @@ Les containers sont la depuis *très longtemps*
 
 ### Containers vs. VMs
 
-![Image](img/containers-vs-vms.png)
+<img src="img/containers-vs-vms.png" style="background:none; border:none; box-shadow:none;"/>
 
 ----
 
 ### Pourquoi les containers sont légers ?
 
-![Image](img/why-are-containers-lightweight.png)
+<img src="img/why-are-containers-lightweight.png" style="background:none; border:none; box-shadow:none;"/>
 
 ----
 
-### Fondamentaux de Docker
+### Docker - Worflow
 
-![Image](img/basics-of-docker-system.png)
-
-----
-
-### Changement et mise à jour
-
-![Image](img/changes-and-updates.png)
+<img src="img/basics-of-docker-system.png" style="background:none; border:none; box-shadow:none;"/>
 
 ----
 
 ### Cgroups (control groups)
 
 cgroups (control groups) est une fonctionnalité du noyau Linux pour limiter, compter et isoler l'utilisation des ressources (processeur, mémoire, utilisation disque, etc.)
+
+----
+
+### Cgroups (control groups)
+
+<img src="img/cgroups.png" style="background:none; border:none; box-shadow:none;"/>
+[more on cgroups](https://mairin.wordpress.com/2011/05/13/ideas-for-a-cgroups-ui/)
+
+----
+
+### Cgroups - multiple cgroups
+
+<img src="img/cgroups-usage.png" style="background:none; border:none; box-shadow:none;"/>
+[more on cgroups](https://mairin.wordpress.com/2011/05/13/ideas-for-a-cgroups-ui/)
 
 ----
 
@@ -110,9 +118,15 @@ cgroups (control groups) est une fonctionnalité du noyau Linux pour limiter, co
 
 ----
 
+### Namespaces
+
+<img src="img/namespaces.png" style="background:none; border:none; box-shadow:none;"/>
+
+----
+
 ### Layer
 
-![Image](http://charlesbjohnson.github.io/docker-introduction/public/images/image_vs_container_diagram.png)
+<img src="img/container-layers.jpg" style="background:none; border:none; box-shadow:none;"/>
 
 ----
 
@@ -200,7 +214,7 @@ Removing intermediate container 02071fceb21b
 ### Démarrer un container
 
 ```bash
-$ docker run --name test -it debian
+$ docker run --name test -it debian bash
 
 Unable to find image 'debian:latest' locally
 latest: Pulling from library/debian
@@ -225,12 +239,6 @@ d6c0fe130dba        debian:7            "/bin/bash"         26 seconds ago      
 ### Détacher un container
 
 ```bash
-$ docker run --name test -it debian
-
-root@e2f798002584:/# 
-```
-
-```bash
 $ docker run --name test -d debian
 
 77b89ea9ce3537dff386149cb2cb51dc482413a19f8106b11814a66143d8360b
@@ -249,24 +257,17 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 Les variables d'environnements servent à paramétrer un container, par exemple pour mettre en place une chaine de connexion, ou un paramétrage particulier
 
 ```bash
-$ docker run -d -e POSTGRES_ENV_POSTGRES_USER='bar' -e POSTGRES_ENV_POSTGRES_PASSWORD='foo' postgres
+$ docker run -d \
+    -e POSTGRES_ENV_POSTGRES_USER='bar' \
+    -e POSTGRES_ENV_POSTGRES_PASSWORD='foo' \
+    postgres
 ```
 
 ----
 
 ### Le réseau
 
-Pour accéder au service tournant dans le container, il faut passer par les ports réseaux
-
-- Exposer le service dans le Dockerfile
-
-```dockerfile
-FROM nginx
-COPY nginx.conf /etc/nginx/nginx.conf
-EXPOSE 80
-```
-
-- Mapper le port de la machine avec le service exposé
+Pour accéder au service tournant dans le container, il faut passer mapper le port de la machine avec le service exposé
 
 ```bash
 $ docker run --name nginx -p 8080:80 -d nginx
@@ -325,10 +326,10 @@ Tue 14 Nov 2017 16:40:02 CET
 
 ### Docker compose
 
-Pour simplifier toutes les notions vues précédemment, Docker utilise un fichier yaml, ainsi qu'un outil afin de décrire une stack logicielle complète
+Pour simplifier toutes les notions vues précédemment, Docker utilise un fichier YAML, ainsi qu'un outil afin de décrire une stack logicielle complète
 
 ```yaml
-version: '3.3'
+version: '3'
 
 services:
    db:
@@ -361,10 +362,10 @@ volumes:
 
 ### Quelques cas d'usage
 #### CI/CD
-<img src="http://codethebuild.github.io/slides/images/build-env-jenkins-containers.png" width="70%">
+<img src="http://codethebuild.github.io/slides/images/build-env-jenkins-containers.png" style="background:none; border:none; box-shadow:none;"/>
 
 ----
 
 ### Quelques cas d'usage
 #### Microservices
-<img src="https://github.com/dockersamples/example-voting-app/raw/master/architecture.png" width="60%">
+<img src="https://github.com/dockersamples/example-voting-app/raw/master/architecture.png" style="background:none; border:none; box-shadow:none;"/>

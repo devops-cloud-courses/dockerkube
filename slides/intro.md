@@ -1,13 +1,25 @@
-# Cours Docker/Kubernetes ECE
-#### By
-##### Laurent Grangeau & Arthur Mauvezin
+# Docker & Kubernetes
+#### In a nutshell
 
-<i><a target="_new" href="http://twitter.com/laurentgrangeau">@laurentgrangeau</a> | <a target="_new" href="http://github.com/laurentgrangeau">http://github.com/laurentgrangeau</a></i>
-<i><a target="_new" href="http://twitter.com/arthurmauvezin">@arthurmauvezin</a> | <a target="_new" href="http://github.com/arthurmauvezin">http://github.com/arthurmauvezin</a></i>
+<br />
+
+<i><a target="_new" href="http://twitter.com/arthurmauvezin">@arthurmauvezin</a> | <a target="_new" href="http://github.com/arthurmauvezin">github.com/arthurmauvezin</a></i>
+<i><a target="_new" href="http://twitter.com/laurentgrangeau">@laurentgrangeau</a> | <a target="_new" href="http://github.com/laurentgrangeau">github.com/laurentgrangeau</a></i>
+
+<a href="#/2/3" style="font-size: 22px; background: #4141d8; text-decoration: none; padding: 20px; color: white; border-radius: 7px;">How to explore this doc</a>
 
 ---
 
-## Who we are ?
+### Who we are?
+
+> Arthur Mauvezin<br />
+> DevOps Practice Leader @ Teolia
+
+<img src="https://avatars2.githubusercontent.com/u/10439516?s=400&u=27155f0ca1ec897597b113b9677934db02901d9a&v=4" width="200px" />
+
+----
+
+### Who we are?
 
 > Laurent Grangeau<br />
 > Cloud Solution Architect @ Sogeti
@@ -16,9 +28,26 @@
 
 ---
 
-## Who we are ?
+## Introduction
 
-> Arthur Mauvezin<br />
-> DevOps Engineer @ Ouidou Consulting
+----
 
-<img src="https://avatars3.githubusercontent.com/u/10439516?s=460&v=4" width="200px" />
+### Et si on vous donnait un peu d'aide :)
+
+* Des questions sur le dernier TP ?
+
+----
+
+### Qui connait Docker / Kubernetes ?
+
+----
+
+## How to explore this doc
+
+* This presentation use [Reveal.js framework](https://revealjs.com/#/)
+* Press **Esc** to zoom out to all slides or zoom in
+* Press **?** on your keyboard to get navigation help
+* <a href="#/" style="font-size: 22px; background: #4141d8; text-decoration: none; padding: 20px; padding-top: 12px; padding-bottom: 12px; color: white; border-radius: 7px;">Go back to first slide</a>
+
+
+        
