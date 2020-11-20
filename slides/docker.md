@@ -40,7 +40,7 @@
 
 ### Docker résoud la matrice de l'enfer
 
-<img src="img/eliminates-matrix-from-hell.png" style="background:none; border:none; box-shadow:none;"/>
+<img src="img/eliminates-matrix-from-hell.png" style="background:none; border:none; box-shadow:none;" width="80%"/>
 
 ----
 
@@ -85,6 +85,7 @@ cgroups (control groups) est une fonctionnalité du noyau Linux pour limiter, co
 ### Cgroups (control groups)
 
 <img src="img/cgroups.png" style="background:none; border:none; box-shadow:none;"/>
+<br/>
 [more on cgroups](https://mairin.wordpress.com/2011/05/13/ideas-for-a-cgroups-ui/)
 
 ----
@@ -92,6 +93,7 @@ cgroups (control groups) est une fonctionnalité du noyau Linux pour limiter, co
 ### Cgroups - multiple cgroups
 
 <img src="img/cgroups-usage.png" style="background:none; border:none; box-shadow:none;"/>
+
 [more on cgroups](https://mairin.wordpress.com/2011/05/13/ideas-for-a-cgroups-ui/)
 
 ----
@@ -120,7 +122,7 @@ cgroups (control groups) est une fonctionnalité du noyau Linux pour limiter, co
 
 ### Namespaces
 
-<img src="img/namespaces.png" style="background:none; border:none; box-shadow:none;"/>
+<img src="img/namespaces.png" style="background:none; border:none; box-shadow:none;" width="60%" />
 
 ----
 
@@ -368,4 +370,4 @@ volumes:
 
 ### Quelques cas d'usage
 #### Microservices
-<img src="https://github.com/dockersamples/example-voting-app/raw/master/architecture.png" style="background:none; border:none; box-shadow:none;"/>
+<img src="https://github.com/dockersamples/example-voting-app/raw/master/architecture.png" style="background:none; border:none; box-shadow:none;" width="70%" />
