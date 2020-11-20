@@ -49,22 +49,19 @@ Lorsqu'une demande est faite de scaler les pods, HPA s'occupe de démarrer les p
 ### Deployment
 
 Un déploiement est la manière de déployer un pod
+> Un déploiement est déclaratif, c'est-à-dire que Kubernetes va s'assurer que le nombre de pods est toujours celui demandé
 
-Un déploiement est déclaratif, c'est-à-dire que Kubernetes va s'assurer que le nombre de pods est toujours celui demandé
-
-<img src="https://d33wubrfki0l68.cloudfront.net/152c845f25df8e69dd24dd7b0836a289747e258a/4a1d2/docs/tutorials/kubernetes-basics/public/images/module_02_first_app.svg" style="background:none; border:none; box-shadow:none;" width="90%"/>
+<img src="https://d33wubrfki0l68.cloudfront.net/152c845f25df8e69dd24dd7b0836a289747e258a/4a1d2/docs/tutorials/kubernetes-basics/public/images/module_02_first_app.svg" style="background:none; border:none; box-shadow:none;" width="45%"/>
 
 ----
 
 ### Services
 
-Un service est la manière d'accéder aux pods
+* Un service est la manière d'accéder aux pods
+* Un service expose une adresse IP, ainsi qu'un port
+* Il joue le role de load-balancer
 
-Un service expose une adresse IP, ainsi qu'un port
-
-Il joue le role de load-balancer
-
-<img src="https://d33wubrfki0l68.cloudfront.net/cc38b0f3c0fd94e66495e3a4198f2096cdecd3d5/ace10/docs/tutorials/kubernetes-basics/public/images/module_04_services.svg" style="background:none; border:none; box-shadow:none;" width="80%"/>
+<img src="https://d33wubrfki0l68.cloudfront.net/cc38b0f3c0fd94e66495e3a4198f2096cdecd3d5/ace10/docs/tutorials/kubernetes-basics/public/images/module_04_services.svg" style="background:none; border:none; box-shadow:none;" width="35%"/>
 
 ----
 
