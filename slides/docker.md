@@ -173,7 +173,7 @@ Un Dockerfile est un fichier qui contient toutes les inscriptions nécessaires p
 ```dockerfile
 FROM busybox
 RUN ls -lh /
-RUN CMD echo Hello world
+CMD echo Hello world
 ```
 
 ----

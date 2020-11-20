@@ -6,7 +6,7 @@
 
 Afin de garantir qu'un container fonctionne, il est nécessaire d'avoir un orchestrateur de container
 
-Celui-ci garanti que le container est toujours en fonctionnement, même si les noeuds du cluster se mettent à jour ou tombent en panne
+Celui-ci garanti que le container soit toujours en fonctionnement, même si les noeuds du cluster se mettent à jour ou tombent en panne
 
 ----
 
