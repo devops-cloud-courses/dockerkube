@@ -225,7 +225,7 @@ Mon image
 ### Démarrer un container en mode interactif
 
 ```bash [1|2-6|7]
-$ docker run --name interactif -it debian bash
+$ docker run -it debian bash
 Unable to find image 'debian:latest' locally
 latest: Pulling from library/debian
 05d1a5232b46: Pull complete 
@@ -255,7 +255,7 @@ CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS        
 
 Les variables d'environnements servent à paramétrer un container, par exemple pour mettre en place une chaine de connexion, ou un paramétrage particulier
 
-```bash
+```bash [1|2-3|4]
 $ docker run -d \
     -e POSTGRES_ENV_POSTGRES_USER='bar' \
     -e POSTGRES_ENV_POSTGRES_PASSWORD='foo' \
@@ -269,7 +269,7 @@ $ docker run -d \
 Pour accéder au service tournant dans le container, il faut passer mapper le port de la machine avec le service exposé
 
 ```bash
-$ docker run --name nginx -p 8080:80 -d nginx
+$ docker run -p 8080:80 -d nginx
 ```
 
 ----
@@ -279,7 +279,7 @@ $ docker run --name nginx -p 8080:80 -d nginx
 Pour pouvoir persister des données provenant des containers, il est nécessaire de passer par des volumes
 
 ```bash
-$ docker run -d --name devtest -v myvol2:/app nginx:latest
+$ docker run -d -v myvol2:/app nginx:latest
 ```
 
 ```bash
@@ -309,13 +309,8 @@ Par défaut, Docker écrit sur la sortie standard STDOUT
 $ docker run --name test -d busybox sh -c "while true; do $(echo date); sleep 1; done"
 ```
 
-```bash
-$ date
-Tue 14 Nov 2017 16:40:00 CET
-```
-
-```bash
-$ docker logs -f --until=2s
+```bash [1|2-4]
+$ docker logs -f --until=2s test
 Tue 14 Nov 2017 16:40:00 CET
 Tue 14 Nov 2017 16:40:01 CET
 Tue 14 Nov 2017 16:40:02 CET
@@ -327,9 +322,8 @@ Tue 14 Nov 2017 16:40:02 CET
 
 Pour simplifier toutes les notions vues précédemment, Docker utilise un fichier YAML, ainsi qu'un outil afin de décrire une stack logicielle complète
 
-```yaml
+```yaml [1|2|3-12|13-23|24-25]
 version: '3'
-
 services:
    db:
      image: mysql:5.7
@@ -341,7 +335,6 @@ services:
        MYSQL_DATABASE: wordpress
        MYSQL_USER: wordpress
        MYSQL_PASSWORD: wordpress
-
    wordpress:
      depends_on:
        - db
