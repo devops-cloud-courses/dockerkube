@@ -32,17 +32,28 @@ Cependant, il ne répond pas à des contraintes de production
 
 ----
 
+### Manifest Yaml
+
+```yaml [1-2|3-4|5|6-10]
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.14.2
+    ports:
+    - containerPort: 80
+```
+
+----
+
 ### Pods
 
 Un pod est un regroupement de container au sein d'une même unité
 
 <img src="https://d33wubrfki0l68.cloudfront.net/5cb72d407cbe2755e581b6de757e0d81760d5b86/a9df9/docs/tutorials/kubernetes-basics/public/images/module_03_nodes.svg" style="background:none; border:none; box-shadow:none;" width="50%"/>
-
-----
-
-### Horizontal pod autoscaler
-
-Lorsqu'une demande est faite de scaler les pods, HPA s'occupe de démarrer les pods sur les noeuds correspondant, respectant les contraintes imposées
 
 ----
 
@@ -70,6 +81,12 @@ Lorsqu'une demande est faite de scaler les pods, HPA s'occupe de démarrer les p
 L'ingress sert à exposer à l'extérieur du cluster un service
 
 Cela se représente traditionnellement par un load balancer, une URL ainsi que du SSL
+
+----
+
+### Horizontal pod autoscaler
+
+Lorsqu'une demande est faite de scaler les pods, HPA s'occupe de démarrer les pods sur les noeuds correspondant, respectant les contraintes imposées
 
 ----
 
