@@ -29,6 +29,7 @@
         <section data-markdown="slides/introduction.md" data-separator="^\r?\n---\r?\n$" data-separator-vertical="^\r?\n----\r?\n$" data-separator-notes="^Note:" data-charset="utf-8"></section>
         <section data-markdown="slides/docker.md" data-separator="^\r?\n---\r?\n$" data-separator-vertical="^\r?\n----\r?\n$" data-separator-notes="^Note:" data-charset="utf-8"></section>
         <section data-markdown="slides/kubernetes.md" data-separator="^\r?\n---\r?\n$" data-separator-vertical="^\r?\n----\r?\n$" data-separator-notes="^Note:" data-charset="utf-8"></section>
+        <section data-markdown="slides/logging.md" data-separator="^\r?\n---\r?\n$" data-separator-vertical="^\r?\n----\r?\n$" data-separator-notes="^Note:" data-charset="utf-8"></section>
         <section data-markdown="slides/conclusion.md" data-separator="^\r?\n---\r?\n$" data-separator-vertical="^\r?\n----\r?\n$" data-separator-notes="^Note:" data-charset="utf-8"></section>
       </div>
     </div>
@@ -51,6 +52,13 @@
         slideNumber: 'c/t',
         transition: 'slide',
         plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      }).then(() => {
+        document.querySelectorAll('.reveal img').forEach((img) => {
+          if (!img.complete) {
+            img.addEventListener('load', () => Reveal.layout(), { once: true });
+          }
+        });
+        Reveal.layout();
       });
     </script>
   </body>

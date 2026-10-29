@@ -251,24 +251,32 @@
 /* Code Blocks (pre + highlight.js) */
 .reveal pre {
   width: 100%;
-  margin: 0.5em 0;
+  margin: 0.35em 0;
   box-shadow: var(--shadow-md);
   border-radius: var(--radius-lg);
   border: 1px solid #1e293b;
   background: #0f172a;
-  font-size: 0.62em;
-  line-height: 1.5;
+  font-size: 0.58em;
+  line-height: 1.42;
   overflow: hidden;
 }
 
 .reveal pre code {
   font-family: 'JetBrains Mono', 'Fira Code', monospace;
-  padding: 1.1em 1.4em !important;
-  max-height: 440px;
+  padding: 0.9em 1.3em !important;
+  max-height: 470px;
   background: #0f172a !important;
   color: #f8fafc;
   border-radius: var(--radius-lg);
   box-sizing: border-box;
+}
+
+.reveal .slides section:has(pre) h3 {
+  margin-bottom: 0.35em;
+}
+
+.reveal .slides section:has(pre) ul {
+  margin-bottom: 0.35em;
 }
 
 /* Blockquotes */
@@ -344,29 +352,50 @@
 }
 
 /* Images & Diagrams */
-.reveal .slides section img {
+.reveal .slides section p:has(> img) {
+  margin: 0;
+}
+
+.reveal .slides section:has(img:not(.avatar)) h3 {
+  margin-bottom: 0.35em;
+  padding-bottom: 0.2em;
+}
+
+.reveal .slides section img:not(.avatar) {
   display: block;
-  margin: 0.4em auto 0 auto;
-  max-height: 450px;
-  width: auto;
-  max-width: 90%;
+  margin: 0.15em auto 0 auto;
+  width: 100%;
+  max-width: 100%;
+  max-height: 460px;
+  height: auto;
   object-fit: contain;
   background: #ffffff;
-  padding: 14px;
+  padding: 6px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-md);
+  box-sizing: border-box;
+}
+
+.reveal .slides section:has(.slide-subtitle) img:not(.avatar),
+.reveal .slides section:has(.ref-link) img:not(.avatar) {
+  max-height: 420px;
 }
 
 /* Slides that combine a list and a diagram */
 .reveal .slides section:has(img) > ul {
-  padding: 0.8em 1.3em 0.8em 2em;
-  margin-bottom: 0.45em;
+  padding: 0.6em 1.2em 0.6em 1.8em;
+  margin-bottom: 0.35em;
 }
 
-.reveal .slides section:has(ul) img {
-  max-height: 290px;
-  padding: 10px;
+.reveal .slides section:has(img) > ul li {
+  font-size: 0.86em;
+  margin-bottom: 0.2em;
+}
+
+.reveal .slides section:has(ul) img:not(.avatar) {
+  max-height: 340px;
+  padding: 6px;
 }
 
 /* Title Slide & Hero Styling */

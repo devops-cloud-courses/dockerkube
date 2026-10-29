@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" width="960" height="440" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
-  <rect width="960" height="440" rx="16" fill="#f8fafc"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="14 10 932 404" width="1120" height="485" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <rect x="14" y="10" width="932" height="404" rx="16" fill="#f8fafc"/>
 
   <!-- Column Headers (Environments) -->
-  <g font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">
+  <g font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">
     <rect x="220" y="22" width="134" height="48" rx="8" fill="#1e293b"/>
     <text x="287" y="51">Dev Laptop</text>
 
@@ -20,7 +20,7 @@
   </g>
 
   <!-- Row Headers (Stacks) -->
-  <g font-size="13" font-weight="800" fill="#1e40af" text-anchor="middle">
+  <g font-size="13.5" font-weight="800" fill="#1e40af" text-anchor="middle">
     <rect x="26" y="82" width="182" height="56" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
     <text x="117" y="115">Static Website</text>
 
@@ -38,7 +38,7 @@
   </g>
 
   <!-- Matrix Cells: Every cell is a standardized container -->
-  <g font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" fill="#047857" text-anchor="middle">
+  <g font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#047857" text-anchor="middle">
     <!-- Row 1 -->
     <rect x="220" y="82" width="134" height="56" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
     <text x="287" y="115">🐳 Container ✓</text>

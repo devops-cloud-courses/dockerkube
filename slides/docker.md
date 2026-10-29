@@ -4,43 +4,43 @@
 
 ### The Challenge
 
-<img src="img/the-challenge.svg" alt="The Challenge" />
+<img src="img/the-challenge.svg" alt="The Challenge" width="1120" height="507" />
 
 ----
 
 ### The Matrix from Hell
 
-<img src="img/the-matrix-from-hell.svg" alt="The Matrix from Hell" />
+<img src="img/the-matrix-from-hell.svg" alt="The Matrix from Hell" width="1120" height="485" />
 
 ----
 
 ### Cargo Transport Pre-1960
 
-<img src="img/cargo-transport-pre-1960.svg" alt="Cargo Transport Pre-1960" />
+<img src="img/cargo-transport-pre-1960.svg" alt="Cargo Transport Pre-1960" width="1120" height="507" />
 
 ----
 
 ### Also a Matrix from Hell
 
-<img src="img/also-a-matrix-from-hell.svg" alt="Also a Matrix from Hell" />
+<img src="img/also-a-matrix-from-hell.svg" alt="Also a Matrix from Hell" width="1120" height="485" />
 
 ----
 
 ### The Solution: Intermodal Shipping Container
 
-<img src="img/intermodal-shipping-container.svg" alt="Intermodal Shipping Container" />
+<img src="img/intermodal-shipping-container.svg" alt="Intermodal Shipping Container" width="1120" height="513" />
 
 ----
 
 ### Docker: A Shipping Container for Code
 
-<img src="img/shipping-container-for-code.svg" alt="Shipping Container for Code" />
+<img src="img/shipping-container-for-code.svg" alt="Shipping Container for Code" width="1120" height="513" />
 
 ----
 
 ### Docker Eliminates the Matrix from Hell
 
-<img src="img/eliminates-matrix-from-hell.svg" alt="Eliminates Matrix from Hell" />
+<img src="img/eliminates-matrix-from-hell.svg" alt="Eliminates Matrix from Hell" width="1120" height="485" />
 
 ----
 
@@ -57,19 +57,19 @@
 
 ### Containers vs. Virtual Machines
 
-<img src="img/containers-vs-vms.svg" alt="Containers vs VMs" />
+<img src="img/containers-vs-vms.svg" alt="Containers vs VMs" width="1120" height="507" />
 
 ----
 
 ### Why Are Containers Lightweight?
 
-<img src="img/why-are-containers-lightweight.svg" alt="Why are containers lightweight" />
+<img src="img/why-are-containers-lightweight.svg" alt="Why are containers lightweight" width="1120" height="507" />
 
 ----
 
 ### Docker — Architecture & Workflow
 
-<img src="img/basics-of-docker-system.svg" alt="Docker Architecture" />
+<img src="img/basics-of-docker-system.svg" alt="Docker Architecture" width="1120" height="498" />
 
 ----
 
@@ -84,7 +84,7 @@
 
 ### Cgroups — Unconstrained Processes
 
-<img src="img/cgroups.svg" alt="Cgroups unconstrained" />
+<img src="img/cgroups.svg" alt="Cgroups unconstrained" width="1120" height="425" />
 
 <p class="ref-link"><a href="https://mairin.wordpress.com/2011/05/13/ideas-for-a-cgroups-ui/" target="_blank">More on cgroups</a></p>
 
@@ -92,7 +92,7 @@
 
 ### Cgroups — Resource Isolation
 
-<img src="img/cgroups-usage.svg" alt="Cgroups resource isolation" />
+<img src="img/cgroups-usage.svg" alt="Cgroups resource isolation" width="1120" height="435" />
 
 <p class="ref-link"><a href="https://mairin.wordpress.com/2011/05/13/ideas-for-a-cgroups-ui/" target="_blank">More on cgroups</a></p>
 
@@ -126,13 +126,13 @@
 
 ### Namespaces — Process Tree View
 
-<img src="img/namespaces.svg" alt="PID Namespaces" />
+<img src="img/namespaces.svg" alt="PID Namespaces" width="1120" height="484" />
 
 ----
 
 ### Image Layers & Copy-on-Write (`OverlayFS`)
 
-<img src="img/container-layers.svg" alt="Container Layers" />
+<img src="img/container-layers.svg" alt="Container Layers" width="1120" height="497" />
 
 ----
 
@@ -313,32 +313,40 @@ Mon Oct 29 16:40:02 UTC 2026
 
 - **Docker Compose** defines and runs multi-container applications (services, networks, and volumes) declaratively in a single `compose.yaml` file
 
-```yaml [1|2-11|12-22|23-24]
+```yaml [1|2-8|9-16|17-18]
 services:
   db:
-    image: mysql:8.0
+    image: postgres:16
     volumes:
-      - db_data:/var/lib/mysql
-    restart: always
+      - db_data:/var/lib/postgresql/data
     environment:
-      MYSQL_ROOT_PASSWORD: somewordpress
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: wordpress
-  wordpress:
+      POSTGRES_PASSWORD: secret
+  api:
+    image: myorg/api:1.0
     depends_on:
       - db
-    image: wordpress:latest
     ports:
-      - "8000:80"
-    restart: always
+      - "8000:8000"
     environment:
-      WORDPRESS_DB_HOST: db:3306
-      WORDPRESS_DB_USER: wordpress
-      WORDPRESS_DB_PASSWORD: wordpress
+      DATABASE_URL: postgres://postgres:secret@db:5432/postgres
 volumes:
   db_data:
 ```
+
+----
+
+### Podman — The Daemonless Docker Alternative
+
+- **Podman (`Pod Manager`)** is an open-source, **OCI-compliant** container engine developed by Red Hat as a drop-in replacement for Docker (`alias docker=podman`)
+- **Daemonless Architecture**: No persistent background daemon (`dockerd`) — containers run directly as child processes (`fork/exec`) monitored by lightweight `conmon`
+- **Rootless by Default**: Runs containers as unprivileged users via Linux `user` namespaces, eliminating root daemon security risks
+- **Kubernetes-Native**: Supports multi-container **Pods** locally and can generate or run Kubernetes YAML directly (`podman kube generate`, `podman kube play`)
+
+----
+
+### Docker vs. Podman Architecture
+
+<img src="img/docker-vs-podman.svg" alt="Docker vs Podman Architecture" width="1120" height="476" />
 
 ----
 
@@ -346,10 +354,10 @@ volumes:
 
 - Every build, test, and security scan runs inside reproducible, ephemeral containers
 
-<img src="img/cicd-containers.svg" alt="CI/CD with Containers" />
+<img src="img/cicd-containers.svg" alt="CI/CD with Containers" width="1120" height="320" />
 
 ----
 
 ### Common Use Cases — Microservices
 
-<img src="img/microservices-architecture.svg" alt="Microservices Example Voting App" />
+<img src="img/microservices-architecture.svg" alt="Microservices Example Voting App" width="1120" height="483" />

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" width="960" height="420" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="24 22 912 370" width="1120" height="454" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
   <defs>
     <linearGradient id="helmGrad" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#0f172a"/>
@@ -19,30 +19,30 @@
     </filter>
   </defs>
 
-  <rect width="960" height="420" rx="16" fill="#f8fafc"/>
+  <rect x="24" y="22" width="912" height="370" rx="16" fill="#f8fafc"/>
 
   <!-- Left: Chart / OCI Repository -->
   <rect x="36" y="34" width="270" height="150" rx="16" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="2"/>
-  <text x="171" y="64" text-anchor="middle" font-size="14" font-weight="800" fill="#065f46">Chart &amp; OCI Registries</text>
+  <text x="171" y="64" text-anchor="middle" font-size="14.5" font-weight="800" fill="#065f46">Chart &amp; OCI Registries</text>
   <g filter="url(#cardShadow)">
     <rect x="60" y="80" width="222" height="82" rx="12" fill="#ffffff" stroke="#a7f3d0" stroke-width="1.5"/>
-    <text x="171" y="112" text-anchor="middle" font-size="14" font-weight="800" fill="#0f172a">Helm Charts (OCI / HTTP)</text>
-    <text x="171" y="134" text-anchor="middle" font-size="11.5" font-family="'JetBrains Mono', monospace" fill="#059669">Chart.yaml • values.yaml</text>
-    <text x="171" y="151" text-anchor="middle" font-size="11" font-family="'JetBrains Mono', monospace" fill="#64748b">templates/*.yaml</text>
+    <text x="171" y="112" text-anchor="middle" font-size="14.5" font-weight="800" fill="#0f172a">Helm Charts (OCI / HTTP)</text>
+    <text x="171" y="134" text-anchor="middle" font-size="12.5" font-family="'JetBrains Mono', monospace" fill="#059669">Chart.yaml • values.yaml</text>
+    <text x="171" y="151" text-anchor="middle" font-size="12" font-family="'JetBrains Mono', monospace" fill="#64748b">templates/*.yaml</text>
   </g>
 
   <!-- Bottom Left: Helm v3 Client -->
   <g filter="url(#cardShadow)">
     <rect x="36" y="246" width="270" height="134" rx="16" fill="url(#helmGrad)"/>
     <text x="171" y="286" text-anchor="middle" font-size="17" font-weight="800" fill="#ffffff">Helm v3 Client (CLI / SDK)</text>
-    <text x="171" y="314" text-anchor="middle" font-size="12" font-family="'JetBrains Mono', monospace" fill="#93c5fd">Client-Side Template Engine</text>
-    <text x="171" y="338" text-anchor="middle" font-size="11.5" fill="#e2e8f0">Uses local kubeconfig &amp; RBAC</text>
-    <text x="171" y="358" text-anchor="middle" font-size="11" font-weight="700" fill="#6ee7b7">No Tiller Server Required!</text>
+    <text x="171" y="314" text-anchor="middle" font-size="13" font-family="'JetBrains Mono', monospace" fill="#93c5fd">Client-Side Template Engine</text>
+    <text x="171" y="338" text-anchor="middle" font-size="12.5" fill="#e2e8f0">Uses local kubeconfig &amp; RBAC</text>
+    <text x="171" y="358" text-anchor="middle" font-size="12" font-weight="700" fill="#6ee7b7">No Tiller Server Required!</text>
   </g>
 
   <!-- Arrow: Repo <-> Helm Client -->
   <line x1="171" y1="240" x2="171" y2="192" stroke="#059669" stroke-width="3" marker-end="url(#arrowGreen)"/>
-  <text x="234" y="220" text-anchor="middle" font-size="11.5" font-family="'JetBrains Mono', monospace" font-weight="700" fill="#059669">helm pull / oci://</text>
+  <text x="234" y="220" text-anchor="middle" font-size="12.5" font-family="'JetBrains Mono', monospace" font-weight="700" fill="#059669">helm pull / oci://</text>
 
   <!-- Right: Kubernetes Cluster -->
   <rect x="456" y="34" width="468" height="346" rx="18" fill="#eff6ff" stroke="#93c5fd" stroke-width="2" stroke-dasharray="6 4"/>
@@ -52,28 +52,28 @@
     <!-- kube-apiserver -->
     <rect x="494" y="88" width="392" height="90" rx="14" fill="url(#k8sGrad)"/>
     <text x="690" y="125" text-anchor="middle" font-size="16.5" font-weight="800" fill="#ffffff">Kubernetes API Server (kube-apiserver)</text>
-    <text x="690" y="150" text-anchor="middle" font-size="12" font-family="'JetBrains Mono', monospace" fill="#dbeafe">Authenticates user • Validates &amp; applies manifests</text>
+    <text x="690" y="150" text-anchor="middle" font-size="13" font-family="'JetBrains Mono', monospace" fill="#dbeafe">Authenticates user • Validates &amp; applies manifests</text>
 
     <!-- Workloads -->
     <rect x="494" y="218" width="186" height="132" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
-    <text x="587" y="252" text-anchor="middle" font-size="14" font-weight="800" fill="#0f172a">Managed Workloads</text>
-    <text x="587" y="278" text-anchor="middle" font-size="11.5" font-family="'JetBrains Mono', monospace" fill="#2563eb">Deployments • Pods</text>
-    <text x="587" y="298" text-anchor="middle" font-size="11.5" font-family="'JetBrains Mono', monospace" fill="#2563eb">Services • Ingress</text>
-    <text x="587" y="318" text-anchor="middle" font-size="11.5" font-family="'JetBrains Mono', monospace" fill="#64748b">ConfigMaps • PVCs</text>
+    <text x="587" y="252" text-anchor="middle" font-size="14.5" font-weight="800" fill="#0f172a">Managed Workloads</text>
+    <text x="587" y="278" text-anchor="middle" font-size="12.5" font-family="'JetBrains Mono', monospace" fill="#2563eb">Deployments • Pods</text>
+    <text x="587" y="298" text-anchor="middle" font-size="12.5" font-family="'JetBrains Mono', monospace" fill="#2563eb">Services • Ingress</text>
+    <text x="587" y="318" text-anchor="middle" font-size="12.5" font-family="'JetBrains Mono', monospace" fill="#64748b">ConfigMaps • PVCs</text>
 
     <!-- Release State -->
     <rect x="700" y="218" width="186" height="132" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
-    <text x="793" y="252" text-anchor="middle" font-size="14" font-weight="800" fill="#0f172a">Release State</text>
-    <text x="793" y="278" text-anchor="middle" font-size="11.5" font-family="'JetBrains Mono', monospace" fill="#4f46e5">K8s Secrets (sh.helm.*)</text>
-    <text x="793" y="300" text-anchor="middle" font-size="11" fill="#64748b">Stores revision history</text>
-    <text x="793" y="318" text-anchor="middle" font-size="11" fill="#64748b">for instant helm rollback</text>
+    <text x="793" y="252" text-anchor="middle" font-size="14.5" font-weight="800" fill="#0f172a">Release State</text>
+    <text x="793" y="278" text-anchor="middle" font-size="12.5" font-family="'JetBrains Mono', monospace" fill="#4f46e5">K8s Secrets (sh.helm.*)</text>
+    <text x="793" y="300" text-anchor="middle" font-size="12" fill="#64748b">Stores revision history</text>
+    <text x="793" y="318" text-anchor="middle" font-size="12" fill="#64748b">for instant helm rollback</text>
   </g>
 
   <!-- Arrow: Helm Client -> API Server -->
   <path d="M 306 312 L 380 312 L 380 133 L 486 133" fill="none" stroke="#2563eb" stroke-width="3.5" marker-end="url(#arrowBlue)"/>
   <rect x="318" y="198" width="126" height="46" rx="8" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.5"/>
-  <text x="381" y="218" text-anchor="middle" font-size="11.5" font-weight="800" fill="#1d4ed8">HTTPS / REST API</text>
-  <text x="381" y="234" text-anchor="middle" font-size="10.5" font-family="'JetBrains Mono', monospace" fill="#64748b">Rendered YAML</text>
+  <text x="381" y="218" text-anchor="middle" font-size="12.5" font-weight="800" fill="#1d4ed8">HTTPS / REST API</text>
+  <text x="381" y="234" text-anchor="middle" font-size="11.5" font-family="'JetBrains Mono', monospace" fill="#64748b">Rendered YAML</text>
 
   <!-- Arrows from API server to Workloads & Release State -->
   <line x1="587" y1="178" x2="587" y2="210" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrowBlue)"/>

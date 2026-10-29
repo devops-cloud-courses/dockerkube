@@ -13,31 +13,47 @@
 
 - **Docker Swarm** is the orchestrator built directly into the Docker Engine (`docker swarm init`)
 - Very simple to set up and operate for small-scale clusters
-- However, it lacks the rich ecosystem, advanced scheduling, auto-scaling, and cloud-provider integrations required for large production workloads
+- While not officially deprecated, it is now largely **legacy** — superseded by **Kubernetes**, which provides the rich ecosystem, auto-scaling, and cloud-provider integrations required in production
 
 ----
 
 ### Docker Swarm Architecture
 
-<img src="img/docker-swarm.svg" alt="Docker Swarm Architecture" />
+<img src="img/docker-swarm.svg" alt="Docker Swarm Architecture" width="1120" height="492" />
 
 ----
 
 ### Kubernetes Architecture
 
-<img src="img/k8s-architecture.svg" alt="Kubernetes Architecture" />
+<img src="img/k8s-architecture.svg" alt="Kubernetes Architecture" width="1120" height="498" />
 
 ----
 
-### Declarative YAML Manifest
+### Declarative YAML Manifest Structure
 
-- Every Kubernetes object is declared via four root fields: `apiVersion`, `kind`, `metadata`, and `spec`
+- Every Kubernetes resource is declared using four required root fields:
+  - **`apiVersion`** — Which version of the Kubernetes API defines this object (`v1`, `apps/v1`, `networking.k8s.io/v1`)
+  - **`kind`** — What type of object you want to create (`Pod`, `Deployment`, `Service`, `Ingress`)
+  - **`metadata`** — Data that uniquely identifies the object (`name`, `namespace`, `labels`, `annotations`)
+  - **`spec`** — The **desired state** for the object (containers, replicas, ports, routing rules)
+
+----
+
+### Pods
+
+- A **Pod** is the smallest deployable unit in Kubernetes — it wraps one or more tightly coupled containers that share the **same IP address, network namespace, and storage volumes**
+
+<img src="img/k8s-pod.svg" alt="Kubernetes Pods" width="1120" height="419" />
+
+----
+
+### Pod — Manifest Example
 
 ```yaml [1-2|3-6|7-16]
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nginx
+  name: nginx-pod
   labels:
     app: web
 spec:
@@ -54,20 +70,38 @@ spec:
 
 ----
 
-### Pods
-
-- A **Pod** is the smallest deployable unit in Kubernetes — it wraps one or more tightly coupled containers that share the **same IP address, network namespace, and storage volumes**
-
-<img src="img/k8s-pod.svg" alt="Kubernetes Pods" />
-
-----
-
 ### Deployments
 
 * A **Deployment** manages stateless application Pods via `ReplicaSets`
 * It is **declarative**: you specify the desired number of replicas and image version, and the Deployment controller continuously ensures that exact number of healthy Pods is running
 
-<img src="img/k8s-deployment.svg" alt="Kubernetes Deployment" />
+<img src="img/k8s-deployment.svg" alt="Kubernetes Deployment" width="1120" height="383" />
+
+----
+
+### Deployment — Manifest Example
+
+```yaml [1-4|5-9|10-18]
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.27
+          ports:
+            - containerPort: 80
+```
 
 ----
 
@@ -77,7 +111,27 @@ spec:
 * A **Service** provides a stable **Virtual IP (`ClusterIP`)**, DNS name, and port to reliably reach a set of Pods matching a label selector
 * Acts as an internal `L4` load balancer across healthy Pod endpoints (`ClusterIP`, `NodePort`, `LoadBalancer`)
 
-<img src="img/k8s-service.svg" alt="Kubernetes Services" />
+<img src="img/k8s-service.svg" alt="Kubernetes Services" width="1120" height="379" />
+
+----
+
+### Service — Manifest Example
+
+```yaml [1-4|5-8|9-13]
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-service
+spec:
+  type: ClusterIP
+  selector:
+    app: web
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80
+```
 
 ----
 
@@ -86,6 +140,33 @@ spec:
 - **Ingress** (and its modern successor, the **Gateway API**) exposes `HTTP` and `HTTPS` routes from outside the cluster to internal Services
 - Managed by an Ingress/Gateway controller (`NGINX`, `Envoy`, `Traefik`, or Cloud Load Balancers)
 - Provides `L7` host/path routing, **TLS/SSL termination**, and virtual hosting under a single external IP
+
+----
+
+### Ingress — Manifest Example
+
+```yaml [1-4|5-9|10-19]
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: web-ingress
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts: [app.example.com]
+      secretName: app-tls-cert
+  rules:
+    - host: app.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: web-service
+                port:
+                  number: 80
+```
 
 ----
 
@@ -176,7 +257,7 @@ data:
 
 <p class="slide-subtitle">Initial State — v1 Pods Serving Traffic</p>
 
-<img src="img/k8s-rolling-update-1.svg" alt="Rolling Update Step 1" />
+<img src="img/k8s-rolling-update-1.svg" alt="Rolling Update Step 1" width="1120" height="430" />
 
 ----
 
@@ -184,7 +265,7 @@ data:
 
 <p class="slide-subtitle">Scale Up New ReplicaSet — First v2 Pod Created</p>
 
-<img src="img/k8s-rolling-update-2.svg" alt="Rolling Update Step 2" />
+<img src="img/k8s-rolling-update-2.svg" alt="Rolling Update Step 2" width="1120" height="402" />
 
 ----
 
@@ -192,7 +273,7 @@ data:
 
 <p class="slide-subtitle">Progressive Replacement — Traffic Shifts to Ready v2 Pods</p>
 
-<img src="img/k8s-rolling-update-3.svg" alt="Rolling Update Step 3" />
+<img src="img/k8s-rolling-update-3.svg" alt="Rolling Update Step 3" width="1120" height="402" />
 
 ----
 
@@ -200,7 +281,7 @@ data:
 
 <p class="slide-subtitle">Rollout Complete — Zero Downtime Achieved</p>
 
-<img src="img/k8s-rolling-update-4.svg" alt="Rolling Update Step 4" />
+<img src="img/k8s-rolling-update-4.svg" alt="Rolling Update Step 4" width="1120" height="402" />
 
 ----
 
@@ -234,46 +315,6 @@ readinessProbe:
 
 ----
 
-### Logging — Node Level
-
-- The container runtime captures `STDOUT` / `STDERR` and writes rotated log files to `/var/log/pods` on the node
-
-<img src="img/k8s-logging-node.svg" alt="Node Level Logging" />
-
-----
-
-### Logging — Node Logging Agent (`DaemonSet`)
-
-- A node-level logging agent (`Fluent Bit`, `Vector`, `Promtail`) runs as a `DaemonSet` and ships logs to a central backend
-
-<img src="img/k8s-logging-agent.svg" alt="Node Logging Agent" />
-
-----
-
-### Logging — Streaming Sidecar Container
-
-- When an app writes to custom log files instead of `STDOUT`, a sidecar container tails those files and streams them to `STDOUT`/`STDERR`
-
-<img src="img/k8s-logging-sidecar-stream.svg" alt="Streaming Sidecar Logging" />
-
-----
-
-### Logging — Sidecar with a Logging Agent
-
-- A dedicated logging agent runs as a sidecar inside the Pod and pushes logs directly to the logging backend
-
-<img src="img/k8s-logging-sidecar-agent.svg" alt="Sidecar Logging Agent" />
-
-----
-
-### Logging — Direct Push from Application
-
-- The application pushes structured logs directly over the network to a log management API (`OpenTelemetry`, `Datadog`, `Loki`)
-
-<img src="img/k8s-logging-direct.svg" alt="Application Direct Logging" />
-
-----
-
 ### Monitoring & Alerting
 
 - Cloud-native monitoring relies on **Prometheus**, **Grafana**, and **OpenTelemetry** to scrape metrics from nodes, control-plane components, and application `/metrics` endpoints
@@ -283,7 +324,7 @@ readinessProbe:
 
 ### Monitoring & Alerting Architecture
 
-<img src="img/k8s-monitoring.svg" alt="Prometheus Monitoring Architecture" />
+<img src="img/k8s-monitoring.svg" alt="Prometheus Monitoring Architecture" width="1120" height="451" />
 
 ----
 
@@ -307,7 +348,7 @@ readinessProbe:
 
 ### Helm v3 Architecture
 
-<img src="img/helm-v3-architecture.svg" alt="Helm v3 Architecture" />
+<img src="img/helm-v3-architecture.svg" alt="Helm v3 Architecture" width="1120" height="454" />
 
 ----
 
@@ -320,4 +361,4 @@ readinessProbe:
 
 ### Service Mesh Architecture
 
-<img src="img/service-mesh.svg" alt="Service Mesh Architecture" />
+<img src="img/service-mesh.svg" alt="Service Mesh Architecture" width="1120" height="499" />
