@@ -1,14 +1,14 @@
-## En conclusion
+## In conclusion
 
-* Les containers sont un nouveau paradigme
-* Sans orchestration, peu d'utilité des containers
-* La courbe d'apprentissage n'est pas négligeable
-* L'installation et la maintenance d'un orchestrateur prend du temps
+* **Containers** established a universal paradigm for packaging, shipping, and running software anywhere
+* **Container orchestration** (`Kubernetes`) is essential in production for self-healing, autoscaling, and zero-downtime rollouts
+* **The learning curve** is real — start with managed Kubernetes (`GKE`, `EKS`, `AKS`) or serverless containers (`Cloud Run`, `Container Apps`) rather than managing control planes yourself
 
 ----
 
-### Conclusion
+### Key Takeaway
 
-* Docker et Kube c'est la vie
+* **Docker** standardizes the **application artifact** (build once, run anywhere)
+* **Kubernetes** standardizes the **cloud infrastructure API** across every provider
 
-> Aujourd'hui, toutes les sociétés ont une stratégie d'implémentation Cloud et Container
+> Today, almost every organization relies on a **Cloud-Native & Container** strategy to ship software faster and more reliably.

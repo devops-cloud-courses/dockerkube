@@ -2,287 +2,282 @@
 
 ----
 
-### Le challenge
+### The Challenge
 
-<img src="img/the-challenge.png" style="background:none; border:none; box-shadow:none;"/>
-
-----
-
-### La matrice de l'enfer
-
-<img src="img/the-matrix-from-hell.png" style="background:none; border:none; box-shadow:none;"/>
+<img src="img/the-challenge.png" alt="The Challenge" />
 
 ----
 
-### Le transport par cargo avant 1960
+### The Matrix from Hell
 
-<img src="img/cargo-transport-pre-1960.png" style="background:none; border:none; box-shadow:none;"/>
-
-----
-
-### Aussi une matrice de l'enfer
-
-<img src="img/also-a-matrix-from-hell.png" style="background:none; border:none; box-shadow:none;"/>
+<img src="img/the-matrix-from-hell.png" alt="The Matrix from Hell" />
 
 ----
 
-### La solution : le conteneur intermodal
+### Cargo Transport Pre-1960
 
-<img src="img/intermodal-shipping-container.png" style="background:none; border:none; box-shadow:none;"/>
-
-----
-
-### Docker est un conteneur pour le code
-
-<img src="img/shipping-container-for-code.png" style="background:none; border:none; box-shadow:none;"/>
+<img src="img/cargo-transport-pre-1960.png" alt="Cargo Transport Pre-1960" />
 
 ----
 
-### Docker résout la matrice de l'enfer
+### Also a Matrix from Hell
 
-<img src="img/eliminates-matrix-from-hell.png" style="background:none; border:none; box-shadow:none;" width="80%"/>
-
-----
-
-### Un peu d'histoire
-
-* [IBM VM/370 (1972)](https://en.wikipedia.org/wiki/VM_%28operating_system%29)
-
-* [Linux VServers (2001)](http://www.solucorp.qc.ca/changes.hc?projet=vserver)
-
-* [Solaris Containers (2004)](https://en.wikipedia.org/wiki/Solaris_Containers)
-
-* [FreeBSD jails (1999-2000)](https://www.freebsd.org/cgi/man.cgi?query=jail&sektion=8&manpath=FreeBSD+4.0-RELEASE)
-
-Les containers sont la depuis *très longtemps*
+<img src="img/also-a-matrix-from-hell.png" alt="Also a Matrix from Hell" />
 
 ----
 
-### Containers vs. VMs
+### The Solution: Intermodal Shipping Container
 
-<img src="img/containers-vs-vms.png" style="background:none; border:none; box-shadow:none;"/>
-
-----
-
-### Pourquoi les containers sont légers ?
-
-<img src="img/why-are-containers-lightweight.png" style="background:none; border:none; box-shadow:none;"/>
+<img src="img/intermodal-shipping-container.png" alt="Intermodal Shipping Container" />
 
 ----
 
-### Docker - Worflow
+### Docker: A Shipping Container for Code
 
-<img src="img/basics-of-docker-system.png" style="background:none; border:none; box-shadow:none;"/>
-
-----
-
-### Cgroups (control groups)
-
-cgroups (control groups) est une fonctionnalité du noyau Linux pour limiter, compter et isoler l'utilisation des ressources (processeur, mémoire, utilisation disque, etc.)
+<img src="img/shipping-container-for-code.png" alt="Shipping Container for Code" />
 
 ----
 
-### Cgroups (control groups)
+### Docker Eliminates the Matrix from Hell
 
-<img src="img/cgroups.png" style="background:none; border:none; box-shadow:none;"/>
-
-[more on cgroups](https://mairin.wordpress.com/2011/05/13/ideas-for-a-cgroups-ui/)
+<img src="img/eliminates-matrix-from-hell.png" alt="Eliminates Matrix from Hell" />
 
 ----
 
-### Cgroups - multiple cgroups
+### A Brief History of Containers
 
-<img src="img/cgroups-usage.png" style="background:none; border:none; box-shadow:none;"/>
+* **[IBM VM/370 (1972)](https://en.wikipedia.org/wiki/VM_%28operating_system%29)** & **`chroot` (1979)** — Early hardware virtualization and filesystem isolation
+* **[FreeBSD Jails (2000)](https://www.freebsd.org/cgi/man.cgi?query=jail&sektion=8&manpath=FreeBSD+4.0-RELEASE)** & **[Linux VServer (2001)](https://en.wikipedia.org/wiki/Linux-VServer)** — OS-level process sandboxing
+* **[Solaris Containers (2004)](https://en.wikipedia.org/wiki/Solaris_Containers)** & **`LXC` (2008)** — Combining `cgroups` and `namespaces` in Linux
+* **Docker (2013)** & **OCI Standard (2015)** — Standardized container images and runtime (`runc`, `containerd`)
 
-[more on cgroups](https://mairin.wordpress.com/2011/05/13/ideas-for-a-cgroups-ui/)
-
-----
-
-### Namespaces
-
-- PID
-  - Fournit l'isolation pour l'allocation des identifiants de processus (PIDs), la liste des processus et de leurs détails
-- Network
-  - Isole le contrôleur de l'interface réseau (physique ou virtuel), les règles de pare-feu iptables, les tables de routage, etc.
-- IPC
-  - Isole le System V de communication inter-processus entre les espaces de nommage
+> Containers have been around for **a very long time** — Docker made them accessible to every developer.
 
 ----
 
-### Namespaces
+### Containers vs. Virtual Machines
 
-- Mount
-  - Permet de créer différents modèles de systèmes de fichiers, ou de créer certains points de montage en lecture-seule
-- UTS
-  - Permet le changement de nom d'hôte
-- User
-  - Isole les privilèges et sépare l'identification des utilisateurs dans plusieurs ensembles de processus
+<img src="img/containers-vs-vms.png" alt="Containers vs VMs" />
 
 ----
 
-### Namespaces
+### Why Are Containers Lightweight?
 
-<img src="img/namespaces.png" style="background:none; border:none; box-shadow:none;" width="60%" />
-
-----
-
-### Layer
-
-<img src="img/container-layers.jpg" style="background:none; border:none; box-shadow:none;"/>
+<img src="img/why-are-containers-lightweight.png" alt="Why are containers lightweight" />
 
 ----
 
-### Image
+### Docker — Architecture & Workflow
 
-Une image est un système de fichier en lecture seule
+<img src="img/basics-of-docker-system.png" alt="Docker Architecture" />
 
-```bash [1|2-4|5-6|7-8]
+----
+
+### Cgroups (Control Groups)
+
+- **Control Groups (`cgroups v2`)** are a Linux kernel feature that **limits, accounts for, and isolates** hardware resource usage across process groups:
+  - `CPU` shares and quotas
+  - `Memory` and swap limits (triggers `OOM Killer` if exceeded)
+  - `Disk I/O` and `Network` bandwidth throttling
+
+----
+
+### Cgroups — Unconstrained Processes
+
+<img src="img/cgroups.png" alt="Cgroups unconstrained" />
+
+<p class="ref-link"><a href="https://mairin.wordpress.com/2011/05/13/ideas-for-a-cgroups-ui/" target="_blank">More on cgroups</a></p>
+
+----
+
+### Cgroups — Resource Isolation
+
+<img src="img/cgroups-usage.png" alt="Cgroups resource isolation" />
+
+<p class="ref-link"><a href="https://mairin.wordpress.com/2011/05/13/ideas-for-a-cgroups-ui/" target="_blank">More on cgroups</a></p>
+
+----
+
+### Linux Namespaces (Part 1)
+
+<p class="slide-subtitle">Kernel Isolation Primitives ("What a process can see")</p>
+
+- **`pid` (Process ID)**
+  - Isolates the process ID number space so a container sees its own `PID 1`
+- **`net` (Network)**
+  - Isolates network interfaces (`veth`), IP addresses, routing tables, port numbers, and `iptables` / `nftables` rules
+- **`ipc` (Inter-Process Communication)**
+  - Isolates System V IPC and POSIX message queues between containers
+
+----
+
+### Linux Namespaces (Part 2)
+
+<p class="slide-subtitle">Filesystem, Hostname &amp; Privilege Isolation</p>
+
+- **`mnt` (Mount)**
+  - Isolates filesystem mount points, allowing each container to have its own root filesystem (`rootfs`)
+- **`uts` (UNIX Time-Sharing)**
+  - Isolates the hostname and NIS domain name per container
+- **`user` & `cgroup`**
+  - Maps root inside the container to an unprivileged host UID (`rootless` containers) and hides host cgroup hierarchies
+
+----
+
+### Namespaces — Process Tree View
+
+<img src="img/namespaces.png" alt="PID Namespaces" />
+
+----
+
+### Image Layers & Copy-on-Write (`OverlayFS`)
+
+<img src="img/container-layers.jpg" alt="Container Layers" />
+
+----
+
+### Container Image
+
+- An **image** is an immutable, read-only template composed of stacked filesystem layers (`OCI Image Spec`)
+
+```bash [1|3-8]
 $ docker image ls
 
-REPOSITORY      TAG       IMAGE ID       CREATED        SIZE
-fedora          latest    ddd5c9c1d0f2   3 days ago     204.7 MB
-centos          latest    d0e7f81ca65c   3 days ago     196.6 MB
-ubuntu          latest    07c86167cdc4   4 days ago     188 MB
-redis           latest    4f5f397d4b7c   5 days ago     177.6 MB
-postgres        latest    afe2b5e1859b   5 days ago     264.5 MB
+REPOSITORY   TAG       IMAGE ID       CREATED      SIZE
+postgres     16        afe2b5e1859b   2 days ago   432MB
+ubuntu       24.04     07c86167cdc4   4 days ago   78.1MB
+redis        7-alpine  4f5f397d4b7c   5 days ago   41.2MB
+nginx        1.27      ddd5c9c1d0f2   6 days ago   188MB
 ```
 
 ----
 
 ### Container
 
-Un container est un ensemble de processus isolés qui s'exécute sur ce système de fichier
+- A **container** is a runnable instance of an image: an isolated group of processes with a thin **read-write layer** on top of the read-only image layers
 
-```bash [1|2-4|5]
+```bash [1|3-5]
 $ docker ps
 
-CONTAINER ID        IMAGE                        COMMAND                CREATED              STATUS              PORTS               NAMES
-4c01db0b339c        ubuntu:12.04                 bash                   17 seconds ago       Up 16 seconds       3300-3310/tcp       webapp
-d7886598dbe2        crosbymichael/redis:latest   /redis-server --dir    33 minutes ago       Up 33 minutes       6379/tcp            redis,webapp/db
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                  NAMES
+4c01db0b339c   ubuntu:24.04   "bash"                   17 seconds ago   Up 16 seconds   3300-3310/tcp          webapp
+d7886598dbe2   redis:7-alpine "docker-entrypoint.s…"   33 minutes ago   Up 33 minutes   0.0.0.0:6379->6379/tcp redis
 ```
 
 ----
 
-### Création d'une image
+### Building an Image (`Dockerfile`)
 
-Un Dockerfile est un fichier qui contient toutes les instructions nécessaires pour créer une container image
+- A `Dockerfile` is a text file containing all the instructions needed to assemble a container image layer by layer
 
 ```dockerfile [1|2|3|4]
-FROM ubuntu:18.04
+FROM ubuntu:24.04
 COPY my_local_code /opt/myapp
-RUN apt update -y && apt install -y python3
+RUN apt-get update && apt-get install -y --no-install-recommends python3 && rm -rf /var/lib/apt/lists/*
 CMD ["python3", "-u", "/opt/myapp/main.py"]
 ```
 
 ----
 
-### Docker build
+### `docker build`
 
-Le fichier Dockerfile est interprêté par la commande docker build
+- The `Dockerfile` is interpreted by `docker build` (powered by **BuildKit**), caching unchanged layers automatically
 
-```bash [1|2|3-8|9-10|11-22|23-24|25-28]
-$ docker build -t monimage .
-Sending build context to Docker daemon  44.15MB
-Step 1/4 : FROM ubuntu:18.04
-18.04: Pulling from library/ubuntu
-e706e0a9f423: Pull complete 
-Digest: sha256:50e71ab17a4bfbb11ec9c93aec3fca0b3acad79b4155b717842f1983cb42039e
-Status: Downloaded newer image for ubuntu:18.04
- ---> 71cb16d32be4
-Step 2/4 : COPY my_local_code /opt/myapp
- ---> 22aef4f1b91b
-Step 3/4 : RUN apt update -y && apt install -y python3
- ---> Running in 7a294422b1e8
-Get:1 http://security.ubuntu.com/ubuntu bionic-security InRelease [88.7 kB]
-Get:2 http://archive.ubuntu.com/ubuntu bionic InRelease [242 kB]
-Get:3 http://archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]
-[...]
-Setting up python3 (3.6.7-1~18.04) ...
-running python rtupdate hooks for python3.6...
-running python post-rtupdate hooks for python3.6...
-Processing triggers for libc-bin (2.27-3ubuntu1.6) ...
-Removing intermediate container 7a294422b1e8
- ---> a6694011a39f
-Step 4/4 : CMD ["python3", "-u", "/opt/myapp/main.py"]
- ---> Running in 190ee0a44836
-Removing intermediate container 190ee0a44836
- ---> d5933f3c9702
-Successfully built d5933f3c9702
-Successfully tagged monimage:latest
+```bash [1|2-6|7-9|10-12]
+$ docker build -t myimage:latest .
+[+] Building 4.2s (8/8) FINISHED                                 docker:default
+ => [internal] load build definition from Dockerfile                       0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:24.04            0.4s
+ => [internal] load build context                                          0.1s
+ => [1/3] FROM docker.io/library/ubuntu:24.04@sha256:72297848456d5d37d126  0.8s
+ => [2/3] COPY my_local_code /opt/myapp                                    0.1s
+ => [3/3] RUN apt-get update && apt-get install -y python3                 2.6s
+ => exporting to image                                                     0.2s
+ => => exporting layers                                                    0.1s
+ => => writing image sha256:d5933f3c9702a6694011a39f22aef4f1b91b           0.0s
+ => => naming to docker.io/library/myimage:latest                          0.0s
 ```
 
 ----
 
-### Démarrer un container simple 
+### Running a Simple Container
+
+- Starts an isolated process from `myimage`, executes its `CMD`, and exits when the main process (`PID 1`) finishes
 
 ```bash [1|2]
-$ docker run monimage
-Mon image 
+$ docker run --rm myimage:latest
+Hello from my containerized app!
 ```
 
 ----
 
-### Démarrer un container en mode interactif
+### Running an Interactive Container (`-it`)
+
+- `-i` (`--interactive`) keeps `STDIN` open and `-t` (`--tty`) allocates a pseudo-terminal
 
 ```bash [1|2-6|7]
-$ docker run -it debian bash
-Unable to find image 'debian:latest' locally
-latest: Pulling from library/debian
-05d1a5232b46: Pull complete 
+$ docker run -it debian:bookworm bash
+Unable to find image 'debian:bookworm' locally
+bookworm: Pulling from library/debian
+05d1a5232b46: Pull complete
 Digest: sha256:07fe888a6090482fc6e930c1282d1edf67998a39a09a0b339242fbfa2b602fff
-Status: Downloaded newer image for debian:latest
-root@d6c0fe130dba:/
+Status: Downloaded newer image for debian:bookworm
+root@d6c0fe130dba:/#
 ```
 
 ----
 
-### Démarrer un container en mode détaché
+### Running a Detached Container (`-d`)
+
+- `-d` (`--detach`) runs the container in the background and prints its container ID
 
 ```bash [1|2]
-$ docker run -d nginx
+$ docker run -d nginx:1.27
 96d899b862b6c2d265e8523335d8b1cb34cfff2a1d31c3253f431990d9c889a7
 ```
 
 ```bash [1|2-3]
 $ docker ps
-CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS     NAMES
-96d899b862b6   nginx     "/docker-entrypoint.…"   5 seconds ago   Up 4 seconds   80/tcp    stupefied_mclaren
+CONTAINER ID   IMAGE        COMMAND                  CREATED         STATUS         PORTS     NAMES
+96d899b862b6   nginx:1.27   "/docker-entrypoint.…"   5 seconds ago   Up 4 seconds   80/tcp    stupefied_mclaren
 ```
 
 ----
 
-### Les variables d'environnement
+### Environment Variables (`-e`)
 
-Les variables d'environnements servent à paramétrer un container, par exemple pour mettre en place une chaine de connexion, ou un paramétrage particulier
+- Environment variables configure containers at runtime without rebuilding the image (e.g., database credentials, feature flags, API endpoints)
 
 ```bash [1|2-3|4]
 $ docker run -d \
-    -e POSTGRES_ENV_POSTGRES_USER='bar' \
-    -e POSTGRES_ENV_POSTGRES_PASSWORD='foo' \
-    postgres
+    -e POSTGRES_USER='bar' \
+    -e POSTGRES_PASSWORD='foo' \
+    postgres:16
 ```
 
 ----
 
-### Le réseau
+### Container Networking (`-p`)
 
-Pour accéder au service tournant dans le container, il faut passer mapper le port de la machine avec le service exposé
+- By default, containers run in an isolated network namespace. Use `-p <host_port>:<container_port>` to publish a container port on the host
 
 ```bash
-$ docker run -p 8080:80 -d nginx
+$ docker run -d -p 8080:80 nginx:1.27
 ```
+
+- Requests to `http://localhost:8080` on the host are forwarded to port `80` inside the container
 
 ----
 
-### La persistance
+### Data Persistence (`-v` / `--mount`)
 
-Pour pouvoir persister des données provenant des containers, il est nécessaire de passer par des volumes
+- Container filesystems are ephemeral. To persist data beyond the container lifecycle, mount a **Docker Volume**
 
 ```bash
-$ docker run -d -v myvol2:/app nginx:latest
+$ docker run -d -v myvol2:/app nginx:1.27
 ```
 
-```bash
+```json
 "Mounts": [
     {
         "Type": "volume",
@@ -290,74 +285,71 @@ $ docker run -d -v myvol2:/app nginx:latest
         "Source": "/var/lib/docker/volumes/myvol2/_data",
         "Destination": "/app",
         "Driver": "local",
-        "Mode": "",
-        "RW": true,
-        "Propagation": ""
+        "RW": true
     }
 ]
 ```
 
 ----
 
-### Les fichiers de log
+### Container Logs (`docker logs`)
 
-Il est souvent nécessaire de voir ce qui se passe dans le container, notamment à des fins de monitoring et de debug
-
-Par défaut, Docker écrit sur la sortie standard STDOUT
+- Containers write application logs directly to standard output (`STDOUT` and `STDERR`), captured automatically by the Docker logging driver
 
 ```bash
-$ docker run --name test -d busybox sh -c "while true; do $(echo date); sleep 1; done"
+$ docker run --name test -d busybox sh -c 'while true; do date; sleep 1; done'
 ```
 
 ```bash [1|2-4]
-$ docker logs -f --until=2s test
-Tue 14 Nov 2017 16:40:00 CET
-Tue 14 Nov 2017 16:40:01 CET
-Tue 14 Nov 2017 16:40:02 CET
+$ docker logs -f --tail 3 test
+Mon Oct 29 16:40:00 UTC 2026
+Mon Oct 29 16:40:01 UTC 2026
+Mon Oct 29 16:40:02 UTC 2026
 ```
 
 ----
 
-### Docker compose
+### Docker Compose (`compose.yaml`)
 
-Pour simplifier toutes les notions vues précédemment, Docker utilise un fichier YAML, ainsi qu'un outil afin de décrire une stack logicielle complète
+- **Docker Compose** defines and runs multi-container applications (services, networks, and volumes) declaratively in a single `compose.yaml` file
 
-```yaml [1|2|3-12|13-23|24-25]
-version: '3'
+```yaml [1|2-11|12-22|23-24]
 services:
-   db:
-     image: mysql:5.7
-     volumes:
-       - db_data:/var/lib/mysql
-     restart: always
-     environment:
-       MYSQL_ROOT_PASSWORD: somewordpress
-       MYSQL_DATABASE: wordpress
-       MYSQL_USER: wordpress
-       MYSQL_PASSWORD: wordpress
-   wordpress:
-     depends_on:
-       - db
-     image: wordpress:latest
-     ports:
-       - "8000:80"
-     restart: always
-     environment:
-       WORDPRESS_DB_HOST: db:3306
-       WORDPRESS_DB_USER: wordpress
-       WORDPRESS_DB_PASSWORD: wordpress
+  db:
+    image: mysql:8.0
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: somewordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:latest
+    ports:
+      - "8000:80"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
 volumes:
-    db_data:
+  db_data:
 ```
 
 ----
 
-### Quelques cas d'usage
-#### CI/CD
-<img src="http://codethebuild.github.io/slides/images/build-env-jenkins-containers.png" style="background:none; border:none; box-shadow:none;"/>
+### Common Use Cases — CI/CD Pipelines
+
+- Every build, test, and security scan runs inside reproducible, ephemeral containers
+
+<img src="img/cicd-containers.svg" alt="CI/CD with Containers" />
 
 ----
 
-### Quelques cas d'usage
-#### Microservices
-<img src="https://github.com/dockersamples/example-voting-app/raw/master/architecture.png" style="background:none; border:none; box-shadow:none;" width="70%" />
+### Common Use Cases — Microservices
+
+<img src="https://github.com/dockersamples/example-voting-app/raw/master/architecture.png" alt="Microservices Example Voting App" />

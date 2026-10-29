@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" width="960" height="440" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="meshCtrlGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="meshProxyGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <marker id="meshArrowGreen" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#059669"/>
+    </marker>
+    <marker id="meshArrowPurple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#6366f1"/>
+    </marker>
+    <filter id="meshShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect width="960" height="440" rx="16" fill="#f8fafc"/>
+
+  <!-- Left Pod: Service A -->
+  <rect x="34" y="28" width="296" height="226" rx="18" fill="#eff6ff" stroke="#93c5fd" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="182" y="54" text-anchor="middle" font-size="14.5" font-weight="800" fill="#1e40af">Pod A (Checkout Service)</text>
+
+  <g filter="url(#meshShadow)">
+    <rect x="58" y="72" width="248" height="68" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="182" y="102" text-anchor="middle" font-size="14" font-weight="800" fill="#0f172a">App Container A</text>
+    <text x="182" y="122" text-anchor="middle" font-size="11.5" font-family="'JetBrains Mono', monospace" fill="#64748b">Plain HTTP on localhost</text>
+
+    <rect x="58" y="160" width="248" height="74" rx="12" fill="url(#meshProxyGrad)"/>
+    <text x="182" y="191" text-anchor="middle" font-size="14.5" font-weight="800" fill="#ffffff">Sidecar / Node Proxy (Envoy)</text>
+    <text x="182" y="213" text-anchor="middle" font-size="11" font-family="'JetBrains Mono', monospace" fill="#dbeafe">mTLS • Retries • Telemetry</text>
+  </g>
+
+  <!-- Right Pod: Service B -->
+  <rect x="630" y="28" width="296" height="226" rx="18" fill="#eff6ff" stroke="#93c5fd" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="778" y="54" text-anchor="middle" font-size="14.5" font-weight="800" fill="#1e40af">Pod B (Payment Service)</text>
+
+  <g filter="url(#meshShadow)">
+    <rect x="654" y="72" width="248" height="68" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="778" y="102" text-anchor="middle" font-size="14" font-weight="800" fill="#0f172a">App Container B</text>
+    <text x="778" y="122" text-anchor="middle" font-size="11.5" font-family="'JetBrains Mono', monospace" fill="#64748b">Plain HTTP on localhost</text>
+
+    <rect x="654" y="160" width="248" height="74" rx="12" fill="url(#meshProxyGrad)"/>
+    <text x="778" y="191" text-anchor="middle" font-size="14.5" font-weight="800" fill="#ffffff">Sidecar / Node Proxy (Envoy)</text>
+    <text x="778" y="213" text-anchor="middle" font-size="11" font-family="'JetBrains Mono', monospace" fill="#dbeafe">mTLS • L7 AuthZ • Circuit Breaker</text>
+  </g>
+
+  <!-- Center Data Plane mTLS Tunnel -->
+  <g filter="url(#meshShadow)">
+    <rect x="366" y="156" width="228" height="82" rx="14" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+    <text x="480" y="185" text-anchor="middle" font-size="13.5" font-weight="800" fill="#065f46">Data Plane (East–West)</text>
+    <text x="480" y="205" text-anchor="middle" font-size="12" font-family="'JetBrains Mono', monospace" font-weight="700" fill="#059669">Strict Automatic mTLS</text>
+    <text x="480" y="224" text-anchor="middle" font-size="11" fill="#047857">L7 Traffic Splitting &amp; Tracing</text>
+  </g>
+
+  <line x1="306" y1="197" x2="360" y2="197" stroke="#059669" stroke-width="3.5" marker-end="url(#meshArrowGreen)"/>
+  <line x1="594" y1="197" x2="648" y2="197" stroke="#059669" stroke-width="3.5" marker-end="url(#meshArrowGreen)"/>
+
+  <!-- Bottom: Control Plane -->
+  <g filter="url(#meshShadow)">
+    <rect x="210" y="306" width="540" height="106" rx="18" fill="url(#meshCtrlGrad)" stroke="#ffffff" stroke-width="3"/>
+    <text x="480" y="344" text-anchor="middle" font-size="17" font-weight="800" fill="#ffffff">Service Mesh Control Plane (istiod / Linkerd / Cilium)</text>
+    <text x="480" y="370" text-anchor="middle" font-size="12" font-family="'JetBrains Mono', monospace" fill="#e0e7ff">1. Issues &amp; Rotates Short-Lived SPIFFE X.509 Certs (CA)</text>
+    <text x="480" y="392" text-anchor="middle" font-size="12" font-family="'JetBrains Mono', monospace" fill="#c7d2fe">2. Pushes Routing Rules, Zero-Trust Policies &amp; Collects Metrics</text>
+  </g>
+
+  <!-- Control Plane Config Arrows -->
+  <path d="M310 306 L210 240" stroke="#6366f1" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#meshArrowPurple)"/>
+  <path d="M650 306 L750 240" stroke="#6366f1" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#meshArrowPurple)"/>
+  <text x="230" y="285" text-anchor="middle" font-size="11" font-weight="700" fill="#4f46e5">xDS Config + Certs</text>
+  <text x="730" y="285" text-anchor="middle" font-size="11" font-weight="700" fill="#4f46e5">xDS Config + Certs</text>
+</svg>

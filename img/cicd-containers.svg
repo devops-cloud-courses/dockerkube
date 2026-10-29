@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" width="960" height="360" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="ciGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <marker id="ciArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563eb"/>
+    </marker>
+    <filter id="ciShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect width="960" height="360" rx="16" fill="#f8fafc"/>
+
+  <!-- Step 1: Code & Git -->
+  <g filter="url(#ciShadow)">
+    <rect x="30" y="90" width="185" height="180" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="122" y="135" text-anchor="middle" font-size="15" font-weight="800" fill="#0f172a">1. Git Push</text>
+    <text x="122" y="165" text-anchor="middle" font-size="11.5" font-family="'JetBrains Mono', monospace" fill="#2563eb">Dockerfile</text>
+    <text x="122" y="188" text-anchor="middle" font-size="11.5" font-family="'JetBrains Mono', monospace" fill="#64748b">Source Code</text>
+    <text x="122" y="220" text-anchor="middle" font-size="11" fill="#475569">GitHub / GitLab</text>
+  </g>
+
+  <!-- Step 2: Ephemeral CI Containers -->
+  <g filter="url(#ciShadow)">
+    <rect x="265" y="60" width="215" height="240" rx="16" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+    <text x="372" y="96" text-anchor="middle" font-size="15" font-weight="800" fill="#1e40af">2. CI Build &amp; Test</text>
+    <rect x="285" y="114" width="175" height="48" rx="8" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.5"/>
+    <text x="372" y="143" text-anchor="middle" font-size="12" font-family="'JetBrains Mono', monospace" font-weight="700" fill="#1d4ed8">Unit &amp; Lint Container</text>
+    <rect x="285" y="174" width="175" height="48" rx="8" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.5"/>
+    <text x="372" y="203" text-anchor="middle" font-size="12" font-family="'JetBrains Mono', monospace" font-weight="700" fill="#1d4ed8">docker buildx build</text>
+    <rect x="285" y="234" width="175" height="48" rx="8" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.5"/>
+    <text x="372" y="263" text-anchor="middle" font-size="12" font-family="'JetBrains Mono', monospace" font-weight="700" fill="#059669">CVE Image Scan (Trivy)</text>
+  </g>
+
+  <!-- Step 3: Container Registry -->
+  <g filter="url(#ciShadow)">
+    <rect x="530" y="90" width="185" height="180" rx="16" fill="url(#ciGrad)"/>
+    <text x="622" y="135" text-anchor="middle" font-size="15" font-weight="800" fill="#ffffff">3. OCI Registry</text>
+    <text x="622" y="168" text-anchor="middle" font-size="11.5" font-family="'JetBrains Mono', monospace" fill="#dbeafe">myapp:sha-8f3a1c</text>
+    <text x="622" y="194" text-anchor="middle" font-size="11" fill="#e0e7ff">Immutable Artifact</text>
+    <text x="622" y="224" text-anchor="middle" font-size="11" font-family="'JetBrains Mono', monospace" fill="#bfdbfe">Docker Hub / GHCR / GAR</text>
+  </g>
+
+  <!-- Step 4: CD to Environments -->
+  <g filter="url(#ciShadow)">
+    <rect x="765" y="60" width="165" height="240" rx="16" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="2"/>
+    <text x="847" y="96" text-anchor="middle" font-size="15" font-weight="800" fill="#065f46">4. CD Deploy</text>
+    <rect x="783" y="114" width="130" height="48" rx="8" fill="#ffffff" stroke="#a7f3d0" stroke-width="1.5"/>
+    <text x="848" y="143" text-anchor="middle" font-size="12" font-weight="700" fill="#065f46">Staging</text>
+    <rect x="783" y="174" width="130" height="48" rx="8" fill="#ffffff" stroke="#a7f3d0" stroke-width="1.5"/>
+    <text x="848" y="203" text-anchor="middle" font-size="12" font-weight="700" fill="#065f46">Pre-Prod / QA</text>
+    <rect x="783" y="234" width="130" height="48" rx="8" fill="#ffffff" stroke="#10b981" stroke-width="2"/>
+    <text x="848" y="263" text-anchor="middle" font-size="12" font-weight="800" fill="#047857">Production K8s</text>
+  </g>
+
+  <!-- Arrows -->
+  <line x1="215" y1="180" x2="257" y2="180" stroke="#2563eb" stroke-width="3" marker-end="url(#ciArrow)"/>
+  <line x1="480" y1="180" x2="522" y2="180" stroke="#2563eb" stroke-width="3" marker-end="url(#ciArrow)"/>
+  <line x1="715" y1="180" x2="757" y2="180" stroke="#2563eb" stroke-width="3" marker-end="url(#ciArrow)"/>
+</svg>
