@@ -248,27 +248,129 @@
   box-shadow: 0 2px 0 #cbd5e1;
 }
 
-/* Code Blocks (pre + highlight.js) */
+/* Code Blocks (pre + highlight.js — high-contrast dark theme on light slides) */
 .reveal pre {
   width: 100%;
   margin: 0.35em 0;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.35), 0 4px 10px -2px rgba(15, 23, 42, 0.2);
   border-radius: var(--radius-lg);
-  border: 1px solid #1e293b;
-  background: #0f172a;
+  border: 1px solid #334155;
+  background: #0f172a !important;
+  color: #f8fafc !important;
   font-size: 0.58em;
-  line-height: 1.42;
+  line-height: 1.45;
   overflow: hidden;
 }
 
 .reveal pre code {
+  display: block;
   font-family: 'JetBrains Mono', 'Fira Code', monospace;
-  padding: 0.9em 1.3em !important;
+  padding: 1em 1.35em !important;
   max-height: 470px;
   background: #0f172a !important;
-  color: #f8fafc;
+  color: #f8fafc !important;
+  border: none !important;
   border-radius: var(--radius-lg);
   box-sizing: border-box;
+}
+
+/* Reset highlight.js line-number table inside <pre><code> so .reveal table never turns it white */
+.reveal pre table,
+.reveal pre table.hljs-ln {
+  width: 100%;
+  margin: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  font-size: 1em !important;
+  border-collapse: collapse !important;
+}
+
+.reveal pre table tbody tr,
+.reveal pre table.hljs-ln tbody tr,
+.reveal pre table.hljs-ln tbody tr:nth-child(even),
+.reveal pre table.hljs-ln tbody tr:hover {
+  background: transparent !important;
+}
+
+.reveal pre table tbody td,
+.reveal pre table.hljs-ln tbody td,
+.reveal pre table.hljs-ln tbody td:first-child {
+  padding: 0.05em 0 !important;
+  border: none !important;
+  background: transparent !important;
+  color: #f8fafc !important;
+  font-weight: 400;
+  line-height: 1.45;
+  vertical-align: top;
+}
+
+.reveal pre table.hljs-ln td.hljs-ln-numbers {
+  color: #64748b !important;
+  padding-right: 1em !important;
+  text-align: right;
+  user-select: none;
+  width: 2.2em;
+}
+
+/* Step-by-step line highlights inside dark code blocks */
+.reveal pre code.has-highlights tr:not(.highlight-line) {
+  opacity: 0.38;
+  transition: opacity 0.2s ease;
+}
+
+.reveal pre code.has-highlights tr.highlight-line {
+  opacity: 1;
+  background: rgba(56, 189, 248, 0.14) !important;
+}
+
+/* High-contrast dark syntax highlighting tokens */
+.reveal pre code .hljs-comment,
+.reveal pre code .hljs-quote {
+  color: #94a3b8 !important;
+  font-style: italic;
+}
+
+.reveal pre code .hljs-keyword,
+.reveal pre code .hljs-selector-tag,
+.reveal pre code .hljs-built_in,
+.reveal pre code .hljs-type {
+  color: #c084fc !important;
+  font-weight: 600;
+}
+
+.reveal pre code .hljs-attr,
+.reveal pre code .hljs-attribute,
+.reveal pre code .hljs-property,
+.reveal pre code .hljs-variable,
+.reveal pre code .hljs-template-variable,
+.reveal pre code .hljs-name {
+  color: #38bdf8 !important;
+}
+
+.reveal pre code .hljs-string,
+.reveal pre code .hljs-regexp,
+.reveal pre code .hljs-addition {
+  color: #4ade80 !important;
+}
+
+.reveal pre code .hljs-number,
+.reveal pre code .hljs-literal,
+.reveal pre code .hljs-symbol,
+.reveal pre code .hljs-bullet {
+  color: #fbbf24 !important;
+}
+
+.reveal pre code .hljs-title,
+.reveal pre code .hljs-section,
+.reveal pre code .hljs-function {
+  color: #60a5fa !important;
+  font-weight: 600;
+}
+
+.reveal pre code .hljs-meta {
+  color: #f472b6 !important;
 }
 
 .reveal .slides section:has(pre) h3 {
@@ -296,8 +398,8 @@
   color: var(--text-primary);
 }
 
-/* Modern Tables */
-.reveal table {
+/* Modern Tables (scoped to exclude highlight.js line-number tables) */
+.reveal table:not(.hljs-ln) {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
@@ -310,7 +412,7 @@
   margin: 0.4em 0;
 }
 
-.reveal table thead th {
+.reveal table:not(.hljs-ln) thead th {
   background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
   color: #ffffff;
   font-weight: 700;
@@ -321,19 +423,19 @@
   border-bottom: none;
 }
 
-.reveal table tbody tr {
+.reveal table:not(.hljs-ln) tbody tr {
   transition: background-color 0.15s ease;
 }
 
-.reveal table tbody tr:nth-child(even) {
+.reveal table:not(.hljs-ln) tbody tr:nth-child(even) {
   background-color: #f8fafc;
 }
 
-.reveal table tbody tr:hover {
+.reveal table:not(.hljs-ln) tbody tr:hover {
   background-color: #eff6ff;
 }
 
-.reveal table tbody td {
+.reveal table:not(.hljs-ln) tbody td {
   padding: 0.75em 1.1em;
   border-bottom: 1px solid var(--border-color);
   color: var(--text-secondary);
@@ -341,11 +443,11 @@
   line-height: 1.45;
 }
 
-.reveal table tbody tr:last-child td {
+.reveal table:not(.hljs-ln) tbody tr:last-child td {
   border-bottom: none;
 }
 
-.reveal table tbody td:first-child {
+.reveal table:not(.hljs-ln) tbody td:first-child {
   font-family: 'JetBrains Mono', monospace;
   font-weight: 700;
   color: var(--accent-primary);

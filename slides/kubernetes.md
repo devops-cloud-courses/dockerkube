@@ -72,8 +72,7 @@ spec:
 
 ### Deployments
 
-* A **Deployment** manages stateless application Pods via `ReplicaSets`
-* It is **declarative**: you specify the desired number of replicas and image version, and the Deployment controller continuously ensures that exact number of healthy Pods is running
+- A **Deployment** declaratively manages stateless application Pods via `ReplicaSets`, continuously ensuring the desired number of healthy replicas is running
 
 <img src="img/k8s-deployment.svg" alt="Kubernetes Deployment" width="1120" height="383" />
 
@@ -180,9 +179,7 @@ readinessProbe:
 
 ### Services
 
-* Pods are mortal and their IP addresses change whenever they are recreated
-* A **Service** provides a stable **Virtual IP (`ClusterIP`)**, DNS name, and port to reliably reach a set of Pods matching a label selector
-* Acts as an internal `L4` load balancer across healthy Pod endpoints (`ClusterIP`, `NodePort`, `LoadBalancer`)
+- Pods are ephemeral — a **Service** provides a stable **Virtual IP (`ClusterIP`)**, DNS name, and internal `L4` load balancer across healthy Pods matching a label selector
 
 <img src="img/k8s-service.svg" alt="Kubernetes Services" width="1120" height="379" />
 
@@ -218,16 +215,13 @@ spec:
 
 ### Ingress — Manifest Example (Legacy `v1`)
 
-```yaml [1-4|5-9|10-19]
+```yaml [1-4|5-6|7-16]
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: web-ingress
 spec:
   ingressClassName: traefik
-  tls:
-    - hosts: [app.example.com]
-      secretName: app-tls-cert
   rules:
     - host: app.example.com
       http:
@@ -264,20 +258,6 @@ spec:
         - name: web-service
           port: 80
 ```
-
-----
-
-### Service Mesh
-
-- A **Service Mesh** (`Istio`, `Linkerd`, `Cilium`) manages **East–West** communication between microservices transparently without changing application code
-- Provides **strict Mutual TLS (`mTLS`)**, canary traffic splitting, automatic retries, circuit breaking, and distributed tracing
-- Deployed via **per-Pod sidecars** (`Envoy`, `linkerd2-proxy`) or modern **sidecarless / ambient node proxies** (`Istio Ambient Mode ztunnel`, `Cilium eBPF`)
-
-----
-
-### Service Mesh Architecture
-
-<img src="img/service-mesh.svg" alt="Service Mesh Architecture" width="1120" height="499" />
 
 ----
 
