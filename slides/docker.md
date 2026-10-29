@@ -4,43 +4,43 @@
 
 ### The Challenge
 
-<img src="img/the-challenge.png" alt="The Challenge" />
+<img src="img/the-challenge.svg" alt="The Challenge" />
 
 ----
 
 ### The Matrix from Hell
 
-<img src="img/the-matrix-from-hell.png" alt="The Matrix from Hell" />
+<img src="img/the-matrix-from-hell.svg" alt="The Matrix from Hell" />
 
 ----
 
 ### Cargo Transport Pre-1960
 
-<img src="img/cargo-transport-pre-1960.png" alt="Cargo Transport Pre-1960" />
+<img src="img/cargo-transport-pre-1960.svg" alt="Cargo Transport Pre-1960" />
 
 ----
 
 ### Also a Matrix from Hell
 
-<img src="img/also-a-matrix-from-hell.png" alt="Also a Matrix from Hell" />
+<img src="img/also-a-matrix-from-hell.svg" alt="Also a Matrix from Hell" />
 
 ----
 
 ### The Solution: Intermodal Shipping Container
 
-<img src="img/intermodal-shipping-container.png" alt="Intermodal Shipping Container" />
+<img src="img/intermodal-shipping-container.svg" alt="Intermodal Shipping Container" />
 
 ----
 
 ### Docker: A Shipping Container for Code
 
-<img src="img/shipping-container-for-code.png" alt="Shipping Container for Code" />
+<img src="img/shipping-container-for-code.svg" alt="Shipping Container for Code" />
 
 ----
 
 ### Docker Eliminates the Matrix from Hell
 
-<img src="img/eliminates-matrix-from-hell.png" alt="Eliminates Matrix from Hell" />
+<img src="img/eliminates-matrix-from-hell.svg" alt="Eliminates Matrix from Hell" />
 
 ----
 
@@ -57,19 +57,19 @@
 
 ### Containers vs. Virtual Machines
 
-<img src="img/containers-vs-vms.png" alt="Containers vs VMs" />
+<img src="img/containers-vs-vms.svg" alt="Containers vs VMs" />
 
 ----
 
 ### Why Are Containers Lightweight?
 
-<img src="img/why-are-containers-lightweight.png" alt="Why are containers lightweight" />
+<img src="img/why-are-containers-lightweight.svg" alt="Why are containers lightweight" />
 
 ----
 
 ### Docker — Architecture & Workflow
 
-<img src="img/basics-of-docker-system.png" alt="Docker Architecture" />
+<img src="img/basics-of-docker-system.svg" alt="Docker Architecture" />
 
 ----
 
@@ -84,7 +84,7 @@
 
 ### Cgroups — Unconstrained Processes
 
-<img src="img/cgroups.png" alt="Cgroups unconstrained" />
+<img src="img/cgroups.svg" alt="Cgroups unconstrained" />
 
 <p class="ref-link"><a href="https://mairin.wordpress.com/2011/05/13/ideas-for-a-cgroups-ui/" target="_blank">More on cgroups</a></p>
 
@@ -92,7 +92,7 @@
 
 ### Cgroups — Resource Isolation
 
-<img src="img/cgroups-usage.png" alt="Cgroups resource isolation" />
+<img src="img/cgroups-usage.svg" alt="Cgroups resource isolation" />
 
 <p class="ref-link"><a href="https://mairin.wordpress.com/2011/05/13/ideas-for-a-cgroups-ui/" target="_blank">More on cgroups</a></p>
 
@@ -126,13 +126,13 @@
 
 ### Namespaces — Process Tree View
 
-<img src="img/namespaces.png" alt="PID Namespaces" />
+<img src="img/namespaces.svg" alt="PID Namespaces" />
 
 ----
 
 ### Image Layers & Copy-on-Write (`OverlayFS`)
 
-<img src="img/container-layers.jpg" alt="Container Layers" />
+<img src="img/container-layers.svg" alt="Container Layers" />
 
 ----
 
@@ -352,4 +352,4 @@ volumes:
 
 ### Common Use Cases — Microservices
 
-<img src="https://github.com/dockersamples/example-voting-app/raw/master/architecture.png" alt="Microservices Example Voting App" />
+<img src="img/microservices-architecture.svg" alt="Microservices Example Voting App" />

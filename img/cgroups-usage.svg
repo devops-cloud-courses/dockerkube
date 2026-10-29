@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" width="960" height="400" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <filter id="cguShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect width="960" height="400" rx="16" fill="#f8fafc"/>
+
+  <!-- Top Row: 4 Hardware Subsystems with Slices -->
+  <g filter="url(#cguShadow)" text-anchor="middle">
+    <!-- CPU -->
+    <rect x="36" y="30" width="204" height="114" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <rect x="52" y="32" width="44" height="110" fill="#fef08a"/>
+    <rect x="108" y="32" width="38" height="110" fill="#bbf7d0"/>
+    <rect x="158" y="32" width="64" height="110" fill="#e9d5ff"/>
+    <text x="138" y="82" font-size="18" font-weight="800" fill="#0f172a">CPU</text>
+    <text x="138" y="106" font-size="11" font-family="'JetBrains Mono', monospace" fill="#334155">cpu.max / cpu.weight</text>
+
+    <!-- MEMORY -->
+    <rect x="264" y="30" width="204" height="114" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <rect x="282" y="32" width="54" height="110" fill="#bfdbfe"/>
+    <rect x="356" y="32" width="90" height="110" fill="#a7f3d0"/>
+    <text x="366" y="82" font-size="18" font-weight="800" fill="#0f172a">MEMORY</text>
+    <text x="366" y="106" font-size="11" font-family="'JetBrains Mono', monospace" fill="#334155">memory.max / high</text>
+
+    <!-- NETWORK -->
+    <rect x="492" y="30" width="204" height="114" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <rect x="508" y="32" width="58" height="110" fill="#fecdd3"/>
+    <rect x="574" y="32" width="36" height="110" fill="#a7f3d0"/>
+    <rect x="618" y="32" width="62" height="110" fill="#fed7aa"/>
+    <text x="594" y="82" font-size="18" font-weight="800" fill="#0f172a">NETWORK</text>
+    <text x="594" y="106" font-size="11" font-family="'JetBrains Mono', monospace" fill="#334155">net_cls / tc-ebpf</text>
+
+    <!-- STORAGE I/O -->
+    <rect x="720" y="30" width="204" height="114" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <rect x="742" y="32" width="58" height="110" fill="#e2e8f0"/>
+    <rect x="812" y="32" width="90" height="110" fill="#fef9c3"/>
+    <text x="822" y="82" font-size="18" font-weight="800" fill="#0f172a">STORAGE I/O</text>
+    <text x="822" y="106" font-size="11" font-family="'JetBrains Mono', monospace" fill="#334155">io.max / io.weight</text>
+  </g>
+
+  <!-- Cgroup Hierarchy Cards Below -->
+  <g filter="url(#cguShadow)" text-anchor="middle" font-size="13.5" font-weight="800">
+    <!-- CPU column cgroups -->
+    <rect x="36" y="176" width="204" height="52" rx="10" fill="#fef08a" stroke="#eab308" stroke-width="1.5"/>
+    <text x="138" y="207" fill="#713f12">CGROUP #1 (CPU 30%)</text>
+
+    <rect x="36" y="242" width="204" height="52" rx="10" fill="#bbf7d0" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="138" y="273" fill="#14532d">CGROUP #2 (CPU 25%)</text>
+
+    <rect x="36" y="308" width="204" height="52" rx="10" fill="#e9d5ff" stroke="#a855f7" stroke-width="1.5"/>
+    <text x="138" y="339" fill="#581c87">CGROUP #3 (CPU 45%)</text>
+
+    <!-- Memory + Network cgroups -->
+    <rect x="264" y="176" width="204" height="52" rx="10" fill="#bfdbfe" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="366" y="207" fill="#1e3a8a">CGROUP #4 (RAM 2 GB)</text>
+
+    <rect x="492" y="176" width="204" height="52" rx="10" fill="#fecdd3" stroke="#f43f5e" stroke-width="1.5"/>
+    <text x="594" y="207" fill="#881337">CGROUP #6 (Net 1 Gbps)</text>
+
+    <!-- Spanning Cgroup #5 across Memory & Network -->
+    <rect x="264" y="242" width="432" height="52" rx="10" fill="#a7f3d0" stroke="#10b981" stroke-width="2"/>
+    <text x="480" y="273" fill="#064e3b">CGROUP #5 — Shared Memory + Network Policy</text>
+
+    <rect x="492" y="308" width="204" height="52" rx="10" fill="#fed7aa" stroke="#f97316" stroke-width="1.5"/>
+    <text x="594" y="339" fill="#7c2d12">CGROUP #7 (Net 500 Mbps)</text>
+
+    <!-- Storage I/O cgroups -->
+    <rect x="720" y="176" width="204" height="52" rx="10" fill="#e2e8f0" stroke="#64748b" stroke-width="1.5"/>
+    <text x="822" y="207" fill="#0f172a">CGROUP #8 (IOPS Cap)</text>
+
+    <rect x="720" y="242" width="204" height="52" rx="10" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.5"/>
+    <text x="822" y="273" fill="#713f12">CGROUP #9 (High Priority)</text>
+  </g>
+</svg>

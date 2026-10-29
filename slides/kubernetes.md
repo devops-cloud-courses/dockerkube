@@ -19,7 +19,7 @@
 
 ### Docker Swarm Architecture
 
-<img src="https://cdn-images-1.medium.com/max/1207/1*PYC_TkhBjc0vtaPjjrg6MQ.png" alt="Docker Swarm Architecture" />
+<img src="img/docker-swarm.svg" alt="Docker Swarm Architecture" />
 
 ----
 
@@ -58,7 +58,7 @@ spec:
 
 - A **Pod** is the smallest deployable unit in Kubernetes — it wraps one or more tightly coupled containers that share the **same IP address, network namespace, and storage volumes**
 
-<img src="https://d33wubrfki0l68.cloudfront.net/5cb72d407cbe2755e581b6de757e0d81760d5b86/a9df9/docs/tutorials/kubernetes-basics/public/images/module_03_nodes.svg" alt="Kubernetes Pods" width="50%" />
+<img src="img/k8s-pod.svg" alt="Kubernetes Pods" />
 
 ----
 
@@ -67,7 +67,7 @@ spec:
 * A **Deployment** manages stateless application Pods via `ReplicaSets`
 * It is **declarative**: you specify the desired number of replicas and image version, and the Deployment controller continuously ensures that exact number of healthy Pods is running
 
-<img src="https://d33wubrfki0l68.cloudfront.net/152c845f25df8e69dd24dd7b0836a289747e258a/4a1d2/docs/tutorials/kubernetes-basics/public/images/module_02_first_app.svg" alt="Kubernetes Deployment" width="45%" />
+<img src="img/k8s-deployment.svg" alt="Kubernetes Deployment" />
 
 ----
 
@@ -77,7 +77,7 @@ spec:
 * A **Service** provides a stable **Virtual IP (`ClusterIP`)**, DNS name, and port to reliably reach a set of Pods matching a label selector
 * Acts as an internal `L4` load balancer across healthy Pod endpoints (`ClusterIP`, `NodePort`, `LoadBalancer`)
 
-<img src="https://d33wubrfki0l68.cloudfront.net/cc38b0f3c0fd94e66495e3a4198f2096cdecd3d5/ace10/docs/tutorials/kubernetes-basics/public/images/module_04_services.svg" alt="Kubernetes Services" width="35%" />
+<img src="img/k8s-service.svg" alt="Kubernetes Services" />
 
 ----
 
@@ -176,7 +176,7 @@ data:
 
 <p class="slide-subtitle">Initial State — v1 Pods Serving Traffic</p>
 
-<img src="https://d33wubrfki0l68.cloudfront.net/30f75140a581110443397192d70a4cdb37df7bfc/fa906/docs/tutorials/kubernetes-basics/public/images/module_06_rollingupdates1.svg" alt="Rolling Update Step 1" width="70%" />
+<img src="img/k8s-rolling-update-1.svg" alt="Rolling Update Step 1" />
 
 ----
 
@@ -184,7 +184,7 @@ data:
 
 <p class="slide-subtitle">Scale Up New ReplicaSet — First v2 Pod Created</p>
 
-<img src="https://d33wubrfki0l68.cloudfront.net/678bcc3281bfcc588e87c73ffdc73c7a8380aca9/703a2/docs/tutorials/kubernetes-basics/public/images/module_06_rollingupdates2.svg" alt="Rolling Update Step 2" width="70%" />
+<img src="img/k8s-rolling-update-2.svg" alt="Rolling Update Step 2" />
 
 ----
 
@@ -192,7 +192,7 @@ data:
 
 <p class="slide-subtitle">Progressive Replacement — Traffic Shifts to Ready v2 Pods</p>
 
-<img src="https://d33wubrfki0l68.cloudfront.net/9b57c000ea41aca21842da9e1d596cf22f1b9561/91786/docs/tutorials/kubernetes-basics/public/images/module_06_rollingupdates3.svg" alt="Rolling Update Step 3" width="70%" />
+<img src="img/k8s-rolling-update-3.svg" alt="Rolling Update Step 3" />
 
 ----
 
@@ -200,7 +200,7 @@ data:
 
 <p class="slide-subtitle">Rollout Complete — Zero Downtime Achieved</p>
 
-<img src="https://d33wubrfki0l68.cloudfront.net/6d8bc1ebb4dc67051242bc828d3ae849dbeedb93/fbfa8/docs/tutorials/kubernetes-basics/public/images/module_06_rollingupdates4.svg" alt="Rolling Update Step 4" width="70%" />
+<img src="img/k8s-rolling-update-4.svg" alt="Rolling Update Step 4" />
 
 ----
 
@@ -238,7 +238,7 @@ readinessProbe:
 
 - The container runtime captures `STDOUT` / `STDERR` and writes rotated log files to `/var/log/pods` on the node
 
-<img src="https://d33wubrfki0l68.cloudfront.net/59b1aae2adcfe4f06270b99a2789012ed64bec1f/4d0ad/images/docs/user-guide/logging/logging-node-level.png" alt="Node Level Logging" />
+<img src="img/k8s-logging-node.svg" alt="Node Level Logging" />
 
 ----
 
@@ -246,7 +246,7 @@ readinessProbe:
 
 - A node-level logging agent (`Fluent Bit`, `Vector`, `Promtail`) runs as a `DaemonSet` and ships logs to a central backend
 
-<img src="https://d33wubrfki0l68.cloudfront.net/2585cf9757d316b9030cf36d6a4e6b8ea7eedf5a/1509f/images/docs/user-guide/logging/logging-with-node-agent.png" alt="Node Logging Agent" />
+<img src="img/k8s-logging-agent.svg" alt="Node Logging Agent" />
 
 ----
 
@@ -254,7 +254,7 @@ readinessProbe:
 
 - When an app writes to custom log files instead of `STDOUT`, a sidecar container tails those files and streams them to `STDOUT`/`STDERR`
 
-<img src="https://d33wubrfki0l68.cloudfront.net/c51467e219320fdd46ab1acb40867b79a58d37af/b5414/images/docs/user-guide/logging/logging-with-streaming-sidecar.png" alt="Streaming Sidecar Logging" />
+<img src="img/k8s-logging-sidecar-stream.svg" alt="Streaming Sidecar Logging" />
 
 ----
 
@@ -262,7 +262,7 @@ readinessProbe:
 
 - A dedicated logging agent runs as a sidecar inside the Pod and pushes logs directly to the logging backend
 
-<img src="https://d33wubrfki0l68.cloudfront.net/d55c404912a21223392e7d1a5a1741bda283f3df/c0397/images/docs/user-guide/logging/logging-with-sidecar-agent.png" alt="Sidecar Logging Agent" />
+<img src="img/k8s-logging-sidecar-agent.svg" alt="Sidecar Logging Agent" />
 
 ----
 
@@ -270,7 +270,7 @@ readinessProbe:
 
 - The application pushes structured logs directly over the network to a log management API (`OpenTelemetry`, `Datadog`, `Loki`)
 
-<img src="https://d33wubrfki0l68.cloudfront.net/0b4444914e56a3049a54c16b44f1a6619c0b198e/260e4/images/docs/user-guide/logging/logging-from-application.png" alt="Application Direct Logging" />
+<img src="img/k8s-logging-direct.svg" alt="Application Direct Logging" />
 
 ----
 
@@ -283,7 +283,7 @@ readinessProbe:
 
 ### Monitoring & Alerting Architecture
 
-<img src="https://camo.githubusercontent.com/37141c73c72e1e73ec0669ae6451d834ebe1cd2e/68747470733a2f2f7777772e63616d696c2e6f72672f636f6e74656e742f696d616765732f323031372f636c75737465722e706e67" alt="Prometheus Monitoring Architecture" />
+<img src="img/k8s-monitoring.svg" alt="Prometheus Monitoring Architecture" />
 
 ----
 

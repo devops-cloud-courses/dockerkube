@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" font-family="'Inter', -apple-system, BlinkMacSystemFont, sans-serif">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.06"/>
+    </filter>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#059669"/>
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+  <rect width="960" height="400" rx="16" fill="#f8fafc"/>
+
+  <!-- Left: Kubernetes Cluster Targets -->
+  <rect x="25" y="30" width="295" height="340" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="45" y="18" width="225" height="24" rx="12" fill="#0f172a"/>
+  <text x="157" y="34" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff" letter-spacing="0.5">KUBERNETES METRIC TARGETS</text>
+
+  <rect x="45" y="60" width="255" height="80" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="172" y="88" text-anchor="middle" font-size="13" font-weight="800" fill="#1e3a8a">Control Plane &amp; Nodes</text>
+  <text x="172" y="110" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="11" fill="#2563eb">kubelet / cAdvisor / node-exporter</text>
+
+  <rect x="45" y="158" width="255" height="80" rx="10" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+  <text x="172" y="186" text-anchor="middle" font-size="13" font-weight="800" fill="#065f46">Cluster State Metrics</text>
+  <text x="172" y="208" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="11" fill="#059669">kube-state-metrics (Pods, Deployments)</text>
+
+  <rect x="45" y="256" width="255" height="85" rx="10" fill="#eef2ff" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="172" y="284" text-anchor="middle" font-size="13" font-weight="800" fill="#3730a3">Application Pods</text>
+  <text x="172" y="306" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="11" fill="#4f46e5">HTTP GET /metrics (OpenTelemetry)</text>
+  <text x="172" y="325" text-anchor="middle" font-size="10" fill="#64748b">Discovered via ServiceMonitor</text>
+
+  <!-- Scrape Arrows -->
+  <line x1="305" y1="100" x2="385" y2="165" stroke="#2563eb" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <line x1="305" y1="198" x2="385" y2="198" stroke="#2563eb" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <line x1="305" y1="298" x2="385" y2="230" stroke="#2563eb" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <text x="348" y="188" text-anchor="middle" font-size="10" font-weight="700" fill="#2563eb">scrapes</text>
+
+  <!-- Center: Prometheus TSDB -->
+  <rect x="390" y="80" width="240" height="240" rx="14" fill="#ffffff" stroke="#2563eb" stroke-width="2.5" filter="url(#shadow)"/>
+  <rect x="425" y="68" width="170" height="24" rx="12" fill="#2563eb"/>
+  <text x="510" y="84" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff" letter-spacing="0.5">PROMETHEUS SERVER</text>
+
+  <text x="510" y="130" text-anchor="middle" font-size="15" font-weight="800" fill="#0f172a">Time-Series DB</text>
+  <rect x="415" y="148" width="190" height="45" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="510" y="168" text-anchor="middle" font-size="11" font-weight="700" fill="#1e40af">Kubernetes Service Discovery</text>
+  <text x="510" y="184" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#2563eb">PromQL Engine</text>
+
+  <rect x="415" y="208" width="190" height="45" rx="8" fill="#fffbeb" stroke="#fde68a"/>
+  <text x="510" y="228" text-anchor="middle" font-size="11" font-weight="700" fill="#92400e">Alerting &amp; Recording Rules</text>
+  <text x="510" y="244" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#b45309">SLO / Error Budget Checks</text>
+
+  <rect x="415" y="266" width="190" height="34" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="510" y="287" text-anchor="middle" font-size="11" font-weight="600" fill="#475569">Persistent Volume (`PVC`)</text>
+
+  <!-- Arrows to Grafana & Alertmanager -->
+  <line x1="630" y1="140" x2="695" y2="115" stroke="#059669" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+  <text x="662" y="115" text-anchor="middle" font-size="10" font-weight="700" fill="#059669">PromQL</text>
+
+  <line x1="630" y1="250" x2="695" y2="275" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrowRed)"/>
+  <text x="662" y="278" text-anchor="middle" font-size="10" font-weight="700" fill="#dc2626">fires alerts</text>
+
+  <!-- Right Top: Grafana -->
+  <rect x="700" y="40" width="235" height="145" rx="14" fill="#ffffff" stroke="#10b981" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="720" y="28" width="140" height="24" rx="12" fill="#059669"/>
+  <text x="790" y="44" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">VISUALIZATION</text>
+  <text x="817" y="85" text-anchor="middle" font-size="15" font-weight="800" fill="#065f46">Grafana</text>
+  <text x="817" y="110" text-anchor="middle" font-size="11" fill="#475569">Dashboards, SLOs &amp;</text>
+  <text x="817" y="128" text-anchor="middle" font-size="11" fill="#475569">Cluster Capacity Views</text>
+  <text x="817" y="158" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#059669">Metrics + Logs + Traces</text>
+
+  <!-- Right Bottom: Alertmanager -->
+  <rect x="700" y="215" width="235" height="150" rx="14" fill="#ffffff" stroke="#ef4444" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="720" y="203" width="150" height="24" rx="12" fill="#dc2626"/>
+  <text x="795" y="219" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">INCIDENT ROUTING</text>
+  <text x="817" y="260" text-anchor="middle" font-size="15" font-weight="800" fill="#991b1b">Alertmanager</text>
+  <text x="817" y="285" text-anchor="middle" font-size="11" fill="#475569">Deduplicates, groups &amp; routes</text>
+  <rect x="720" y="302" width="195" height="42" rx="8" fill="#fef2f2" stroke="#fecaca"/>
+  <text x="817" y="327" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#dc2626">Slack · PagerDuty · Opsgenie</text>
+</svg>

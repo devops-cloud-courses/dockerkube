@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" width="960" height="440" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="isoGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <marker id="isoArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563eb"/>
+    </marker>
+    <filter id="isoShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="960" height="440" rx="16" fill="#f8fafc"/>
+
+  <!-- Top Row: Any Goods -->
+  <g filter="url(#isoShadow)" text-anchor="middle" font-size="13" font-weight="800" fill="#0f172a">
+    <rect x="38" y="24" width="168" height="68" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="122" y="63">📦 Wooden Crates</text>
+
+    <rect x="218" y="24" width="168" height="68" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="302" y="63">🛢️ Chemical Drums</text>
+
+    <rect x="398" y="24" width="168" height="68" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="482" y="63">🚗 Automobiles</text>
+
+    <rect x="578" y="24" width="168" height="68" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="662" y="63">🌾 Coffee &amp; Spices</text>
+
+    <rect x="758" y="24" width="164" height="68" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="840" y="63">🎹 Luxury Goods</text>
+  </g>
+
+  <!-- Converging Arrows to Container -->
+  <path d="M 122 92 L 360 156" stroke="#2563eb" stroke-width="2.5" marker-end="url(#isoArrow)"/>
+  <path d="M 302 92 L 410 156" stroke="#2563eb" stroke-width="2.5" marker-end="url(#isoArrow)"/>
+  <path d="M 482 92 L 480 156" stroke="#2563eb" stroke-width="2.5" marker-end="url(#isoArrow)"/>
+  <path d="M 662 92 L 550 156" stroke="#2563eb" stroke-width="2.5" marker-end="url(#isoArrow)"/>
+  <path d="M 840 92 L 600 156" stroke="#2563eb" stroke-width="2.5" marker-end="url(#isoArrow)"/>
+
+  <!-- Center: Standardized ISO Shipping Container -->
+  <g filter="url(#isoShadow)">
+    <rect x="250" y="162" width="460" height="116" rx="16" fill="url(#isoGrad)" stroke="#ffffff" stroke-width="3"/>
+    <!-- Corrugated container ribs -->
+    <line x1="290" y1="176" x2="290" y2="264" stroke="#3b82f6" stroke-width="3" opacity="0.45"/>
+    <line x1="315" y1="176" x2="315" y2="264" stroke="#3b82f6" stroke-width="3" opacity="0.45"/>
+    <line x1="645" y1="176" x2="645" y2="264" stroke="#3b82f6" stroke-width="3" opacity="0.45"/>
+    <line x1="670" y1="176" x2="670" y2="264" stroke="#3b82f6" stroke-width="3" opacity="0.45"/>
+    <text x="480" y="205" text-anchor="middle" font-size="18.5" font-weight="800" fill="#ffffff">Standard Intermodal Container (ISO)</text>
+    <text x="480" y="232" text-anchor="middle" font-size="12.5" font-family="'JetBrains Mono', monospace" fill="#dbeafe">Loaded &amp; sealed once at origin • Standard dimensions &amp; locks</text>
+    <text x="480" y="254" text-anchor="middle" font-size="12" fill="#93c5fd">Transferred across any transport mode in seconds without unpacking</text>
+  </g>
+
+  <!-- Diverging Arrows to Transport Modes -->
+  <path d="M 360 278 L 122 340" stroke="#2563eb" stroke-width="2.5" marker-end="url(#isoArrow)"/>
+  <path d="M 410 278 L 302 340" stroke="#2563eb" stroke-width="2.5" marker-end="url(#isoArrow)"/>
+  <path d="M 480 278 L 482 340" stroke="#2563eb" stroke-width="2.5" marker-end="url(#isoArrow)"/>
+  <path d="M 550 278 L 662 340" stroke="#2563eb" stroke-width="2.5" marker-end="url(#isoArrow)"/>
+  <path d="M 600 278 L 840 340" stroke="#2563eb" stroke-width="2.5" marker-end="url(#isoArrow)"/>
+
+  <!-- Bottom Row: Any Transport Mode -->
+  <g filter="url(#isoShadow)" text-anchor="middle" font-size="13" font-weight="800" fill="#065f46">
+    <rect x="38" y="348" width="168" height="68" rx="12" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="2"/>
+    <text x="122" y="387">🚚 Freight Trucks</text>
+
+    <rect x="218" y="348" width="168" height="68" rx="12" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="2"/>
+    <text x="302" y="387">🚂 Rail Flatcars</text>
+
+    <rect x="398" y="348" width="168" height="68" rx="12" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="2"/>
+    <text x="482" y="387">🏗️ Gantry Cranes</text>
+
+    <rect x="578" y="348" width="168" height="68" rx="12" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="2"/>
+    <text x="662" y="387">🚢 Container Ships</text>
+
+    <rect x="758" y="348" width="164" height="68" rx="12" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="2"/>
+    <text x="840" y="387">🏭 Automated Ports</text>
+  </g>
+</svg>

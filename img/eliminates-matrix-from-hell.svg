@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" width="960" height="440" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <rect width="960" height="440" rx="16" fill="#f8fafc"/>
+
+  <!-- Column Headers (Environments) -->
+  <g font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">
+    <rect x="220" y="22" width="134" height="48" rx="8" fill="#1e293b"/>
+    <text x="287" y="51">Dev Laptop</text>
+
+    <rect x="364" y="22" width="134" height="48" rx="8" fill="#1e293b"/>
+    <text x="431" y="51">QA Server</text>
+
+    <rect x="508" y="22" width="134" height="48" rx="8" fill="#1e293b"/>
+    <text x="575" y="51">On-Prem Cluster</text>
+
+    <rect x="652" y="22" width="134" height="48" rx="8" fill="#1e293b"/>
+    <text x="719" y="51">Public Cloud</text>
+
+    <rect x="796" y="22" width="138" height="48" rx="8" fill="#1e293b"/>
+    <text x="865" y="51">Prod Servers</text>
+  </g>
+
+  <!-- Row Headers (Stacks) -->
+  <g font-size="13" font-weight="800" fill="#1e40af" text-anchor="middle">
+    <rect x="26" y="82" width="182" height="56" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+    <text x="117" y="115">Static Website</text>
+
+    <rect x="26" y="148" width="182" height="56" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+    <text x="117" y="181">Web Frontend</text>
+
+    <rect x="26" y="214" width="182" height="56" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+    <text x="117" y="247">Background Workers</text>
+
+    <rect x="26" y="280" width="182" height="56" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+    <text x="117" y="313">Primary Database</text>
+
+    <rect x="26" y="346" width="182" height="56" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+    <text x="117" y="379">Message Queue</text>
+  </g>
+
+  <!-- Matrix Cells: Every cell is a standardized container -->
+  <g font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" fill="#047857" text-anchor="middle">
+    <!-- Row 1 -->
+    <rect x="220" y="82" width="134" height="56" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="287" y="115">🐳 Container ✓</text>
+    <rect x="364" y="82" width="134" height="56" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="431" y="115">🐳 Container ✓</text>
+    <rect x="508" y="82" width="134" height="56" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="575" y="115">🐳 Container ✓</text>
+    <rect x="652" y="82" width="134" height="56" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="719" y="115">🐳 Container ✓</text>
+    <rect x="796" y="82" width="138" height="56" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="865" y="115">🐳 Container ✓</text>
+
+    <!-- Row 2 -->
+    <rect x="220" y="148" width="134" height="56" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="287" y="181">🐳 Container ✓</text>
+    <rect x="364" y="148" width="134" height="56" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="431" y="181">🐳 Container ✓</text>
+    <rect x="508" y="148" width="134" height="56" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="575" y="181">🐳 Container ✓</text>
+    <rect x="652" y="148" width="134" height="56" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="719" y="181">🐳 Container ✓</text>
+    <rect x="796" y="148" width="138" height="56" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="865" y="181">🐳 Container ✓</text>
+
+    <!-- Row 3 -->
+    <rect x="220" y="214" width="134" height="56" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="287" y="247">🐳 Container ✓</text>
+    <rect x="364" y="214" width="134" height="56" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="431" y="247">🐳 Container ✓</text>
+    <rect x="508" y="214" width="134" height="56" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="575" y="247">🐳 Container ✓</text>
+    <rect x="652" y="214" width="134" height="56" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="719" y="247">🐳 Container ✓</text>
+    <rect x="796" y="214" width="138" height="56" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="865" y="247">🐳 Container ✓</text>
+
+    <!-- Row 4 -->
+    <rect x="220" y="280" width="134" height="56" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="287" y="313">🐳 Container ✓</text>
+    <rect x="364" y="280" width="134" height="56" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="431" y="313">🐳 Container ✓</text>
+    <rect x="508" y="280" width="134" height="56" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="575" y="313">🐳 Container ✓</text>
+    <rect x="652" y="280" width="134" height="56" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="719" y="313">🐳 Container ✓</text>
+    <rect x="796" y="280" width="138" height="56" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="865" y="313">🐳 Container ✓</text>
+
+    <!-- Row 5 -->
+    <rect x="220" y="346" width="134" height="56" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="287" y="379">🐳 Container ✓</text>
+    <rect x="364" y="346" width="134" height="56" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="431" y="379">🐳 Container ✓</text>
+    <rect x="508" y="346" width="134" height="56" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="575" y="379">🐳 Container ✓</text>
+    <rect x="652" y="346" width="134" height="56" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="719" y="379">🐳 Container ✓</text>
+    <rect x="796" y="346" width="138" height="56" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="865" y="379">🐳 Container ✓</text>
+  </g>
+</svg>

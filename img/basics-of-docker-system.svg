@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" width="960" height="440" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="dkArchGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <marker id="dkArrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563eb"/>
+    </marker>
+    <marker id="dkArrowGreen" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#059669"/>
+    </marker>
+    <marker id="dkArrowAmber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#d97706"/>
+    </marker>
+    <filter id="dkShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect width="960" height="440" rx="16" fill="#f8fafc"/>
+
+  <!-- Left: Docker Client -->
+  <rect x="24" y="24" width="224" height="392" rx="18" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="136" y="56" text-anchor="middle" font-size="16" font-weight="800" fill="#0f172a">Docker Client (CLI)</text>
+
+  <g filter="url(#dkShadow)" text-anchor="middle" font-family="'JetBrains Mono', monospace">
+    <rect x="44" y="92" width="184" height="68" rx="12" fill="#ffffff" stroke="#93c5fd" stroke-width="2"/>
+    <text x="136" y="122" font-size="13.5" font-weight="800" fill="#1d4ed8">docker build</text>
+    <text x="136" y="144" font-size="10.5" fill="#64748b">Builds image from Dockerfile</text>
+
+    <rect x="44" y="186" width="184" height="68" rx="12" fill="#ffffff" stroke="#fcd34d" stroke-width="2"/>
+    <text x="136" y="216" font-size="13.5" font-weight="800" fill="#d97706">docker pull / push</text>
+    <text x="136" y="238" font-size="10.5" fill="#64748b">Syncs layers with Registry</text>
+
+    <rect x="44" y="280" width="184" height="68" rx="12" fill="#ffffff" stroke="#6ee7b7" stroke-width="2"/>
+    <text x="136" y="310" font-size="13.5" font-weight="800" fill="#059669">docker run</text>
+    <text x="136" y="332" font-size="10.5" fill="#64748b">Starts container from image</text>
+  </g>
+  <text x="136" y="388" text-anchor="middle" font-size="11.5" font-weight="700" fill="#475569">REST API over UNIX Socket</text>
+
+  <!-- Center: Docker Host -->
+  <rect x="288" y="24" width="384" height="392" rx="18" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <text x="480" y="56" text-anchor="middle" font-size="16" font-weight="800" fill="#1e40af">Docker Host (Linux VM / Server)</text>
+
+  <g filter="url(#dkShadow)" text-anchor="middle">
+    <!-- Daemon -->
+    <rect x="312" y="76" width="336" height="68" rx="14" fill="url(#dkArchGrad)"/>
+    <text x="480" y="106" font-size="15.5" font-weight="800" fill="#ffffff">Docker Daemon (dockerd + containerd)</text>
+    <text x="480" y="128" font-size="11.5" font-family="'JetBrains Mono', monospace" fill="#dbeafe">Manages Images, Containers, Networks &amp; Volumes</text>
+
+    <!-- Local Images Box -->
+    <rect x="312" y="168" width="160" height="224" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="392" y="196" font-size="14" font-weight="800" fill="#0f172a">Local Images</text>
+    <text x="392" y="214" font-size="10.5" font-family="'JetBrains Mono', monospace" fill="#64748b">Read-Only Templates</text>
+
+    <rect x="330" y="232" width="124" height="40" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+    <text x="392" y="257" font-size="12" font-family="'JetBrains Mono', monospace" font-weight="700" fill="#1d4ed8">ubuntu:24.04</text>
+
+    <rect x="330" y="282" width="124" height="40" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+    <text x="392" y="307" font-size="12" font-family="'JetBrains Mono', monospace" font-weight="700" fill="#1d4ed8">nginx:1.27</text>
+
+    <rect x="330" y="332" width="124" height="40" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+    <text x="392" y="357" font-size="12" font-family="'JetBrains Mono', monospace" font-weight="700" fill="#1d4ed8">postgres:16</text>
+
+    <!-- Running Containers Box -->
+    <rect x="488" y="168" width="160" height="224" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="568" y="196" font-size="14" font-weight="800" fill="#0f172a">Containers</text>
+    <text x="568" y="214" font-size="10.5" font-family="'JetBrains Mono', monospace" fill="#059669">Isolated Processes</text>
+
+    <rect x="506" y="232" width="124" height="40" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="568" y="257" font-size="12" font-family="'JetBrains Mono', monospace" font-weight="700" fill="#047857">web-1 (nginx)</text>
+
+    <rect x="506" y="282" width="124" height="40" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="568" y="307" font-size="12" font-family="'JetBrains Mono', monospace" font-weight="700" fill="#047857">web-2 (nginx)</text>
+
+    <rect x="506" y="332" width="124" height="40" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="568" y="357" font-size="12" font-family="'JetBrains Mono', monospace" font-weight="700" fill="#047857">db-1 (postgres)</text>
+  </g>
+
+  <!-- Right: OCI Container Registry -->
+  <rect x="712" y="24" width="224" height="392" rx="18" fill="#fffbeb" stroke="#fcd34d" stroke-width="2"/>
+  <text x="824" y="56" text-anchor="middle" font-size="16" font-weight="800" fill="#92400e">Container Registry</text>
+  <text x="824" y="78" text-anchor="middle" font-size="11.5" font-family="'JetBrains Mono', monospace" fill="#b45309">Docker Hub • GHCR • GAR</text>
+
+  <g filter="url(#dkShadow)" text-anchor="middle">
+    <rect x="734" y="102" width="180" height="290" rx="14" fill="#ffffff" stroke="#fde68a" stroke-width="1.5"/>
+    <text x="824" y="134" font-size="14" font-weight="800" fill="#0f172a">Remote Repositories</text>
+    <text x="824" y="154" font-size="11" fill="#64748b">Public &amp; Private Images</text>
+
+    <rect x="752" y="178" width="144" height="50" rx="8" fill="#fffbeb" stroke="#fcd34d" stroke-width="1.5"/>
+    <text x="824" y="202" font-size="12" font-family="'JetBrains Mono', monospace" font-weight="700" fill="#b45309">library/ubuntu</text>
+    <text x="824" y="218" font-size="10" fill="#64748b">Official OCI Image</text>
+
+    <rect x="752" y="242" width="144" height="50" rx="8" fill="#fffbeb" stroke="#fcd34d" stroke-width="1.5"/>
+    <text x="824" y="266" font-size="12" font-family="'JetBrains Mono', monospace" font-weight="700" fill="#b45309">library/nginx</text>
+    <text x="824" y="282" font-size="10" fill="#64748b">Official OCI Image</text>
+
+    <rect x="752" y="306" width="144" height="50" rx="8" fill="#fffbeb" stroke="#fcd34d" stroke-width="1.5"/>
+    <text x="824" y="330" font-size="12" font-family="'JetBrains Mono', monospace" font-weight="700" fill="#b45309">myorg/myapp:v2</text>
+    <text x="824" y="346" font-size="10" fill="#64748b">Private App Image</text>
+  </g>
+
+  <!-- Arrows -->
+  <line x1="228" y1="110" x2="304" y2="110" stroke="#2563eb" stroke-width="3" marker-end="url(#dkArrowBlue)"/>
+  <line x1="228" y1="220" x2="282" y2="125" stroke="#d97706" stroke-width="2.5" stroke-dasharray="5 3" marker-end="url(#dkArrowAmber)"/>
+  <line x1="228" y1="314" x2="282" y2="135" stroke="#059669" stroke-width="2.5" stroke-dasharray="5 3" marker-end="url(#dkArrowGreen)"/>
+
+  <!-- Daemon to Images & Containers -->
+  <line x1="392" y1="144" x2="392" y2="162" stroke="#2563eb" stroke-width="2.5" marker-end="url(#dkArrowBlue)"/>
+  <line x1="568" y1="144" x2="568" y2="162" stroke="#059669" stroke-width="2.5" marker-end="url(#dkArrowGreen)"/>
+  <line x1="454" y1="302" x2="498" y2="302" stroke="#059669" stroke-width="2.5" marker-end="url(#dkArrowGreen)"/>
+
+  <!-- Daemon <-> Registry -->
+  <line x1="648" y1="110" x2="726" y2="195" stroke="#d97706" stroke-width="3" marker-end="url(#dkArrowAmber)"/>
+</svg>

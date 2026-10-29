@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" font-family="'Inter', -apple-system, BlinkMacSystemFont, sans-serif">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.06"/>
+    </filter>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#059669"/>
+    </marker>
+  </defs>
+
+  <rect width="960" height="360" rx="16" fill="#f8fafc"/>
+
+  <!-- External / Cluster Client -->
+  <rect x="25" y="120" width="160" height="120" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
+  <text x="105" y="162" text-anchor="middle" font-size="13" font-weight="800" fill="#0f172a">Client / Ingress</text>
+  <text x="105" y="185" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="11" fill="#2563eb">http://web-svc:80</text>
+  <text x="105" y="207" text-anchor="middle" font-size="10" fill="#64748b">CoreDNS Resolution</text>
+
+  <!-- Arrow Client -> Service -->
+  <line x1="185" y1="180" x2="250" y2="180" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+
+  <!-- Kubernetes Service Card -->
+  <rect x="255" y="75" width="265" height="210" rx="14" fill="#ffffff" stroke="#2563eb" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="275" y="63" width="185" height="24" rx="12" fill="#2563eb"/>
+  <text x="367" y="79" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff" letter-spacing="0.5">SERVICE (L4 LOAD BALANCER)</text>
+
+  <text x="387" y="114" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="800" fill="#0f172a">Service: web-svc</text>
+  <rect x="275" y="128" width="225" height="65" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="387" y="150" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#1d4ed8">ClusterIP: 10.96.42.18</text>
+  <text x="387" y="172" text-anchor="middle" font-size="11" fill="#1e40af">Port <tspan font-family="'JetBrains Mono', monospace" font-weight="700">80</tspan> → targetPort <tspan font-family="'JetBrains Mono', monospace" font-weight="700">8080</tspan></text>
+
+  <!-- Label Selector Badge -->
+  <rect x="275" y="208" width="225" height="55" rx="8" fill="#ecfdf5" stroke="#6ee7b7"/>
+  <text x="387" y="229" text-anchor="middle" font-size="11" font-weight="700" fill="#065f46">Label Selector</text>
+  <text x="387" y="249" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="800" fill="#059669">app: web, tier: frontend</text>
+
+  <!-- Load Balancing Arrows -->
+  <path d="M 520 155 L 615 80" stroke="#059669" stroke-width="2.5" fill="none" marker-end="url(#arrowGreen)"/>
+  <path d="M 520 180 L 615 180" stroke="#059669" stroke-width="2.5" fill="none" marker-end="url(#arrowGreen)"/>
+  <path d="M 520 205 L 615 280" stroke="#059669" stroke-width="2.5" fill="none" marker-end="url(#arrowGreen)"/>
+
+  <!-- Pod 1 -->
+  <rect x="625" y="35" width="305" height="88" rx="12" fill="#ffffff" stroke="#10b981" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="640" y="50" width="120" height="24" rx="6" fill="#d1fae5"/>
+  <text x="700" y="66" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#065f46">10.244.1.12:8080</text>
+  <text x="845" y="66" text-anchor="middle" font-size="12" font-weight="800" fill="#0f172a">Pod A (Node 1)</text>
+  <rect x="640" y="84" width="270" height="24" rx="6" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="775" y="100" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#059669">labels: { app: web, tier: frontend }</text>
+
+  <!-- Pod 2 -->
+  <rect x="625" y="136" width="305" height="88" rx="12" fill="#ffffff" stroke="#10b981" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="640" y="151" width="120" height="24" rx="6" fill="#d1fae5"/>
+  <text x="700" y="167" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#065f46">10.244.2.34:8080</text>
+  <text x="845" y="167" text-anchor="middle" font-size="12" font-weight="800" fill="#0f172a">Pod B (Node 2)</text>
+  <rect x="640" y="185" width="270" height="24" rx="6" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="775" y="201" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#059669">labels: { app: web, tier: frontend }</text>
+
+  <!-- Pod 3 -->
+  <rect x="625" y="237" width="305" height="88" rx="12" fill="#ffffff" stroke="#10b981" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="640" y="252" width="120" height="24" rx="6" fill="#d1fae5"/>
+  <text x="700" y="268" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#065f46">10.244.3.19:8080</text>
+  <text x="845" y="268" text-anchor="middle" font-size="12" font-weight="800" fill="#0f172a">Pod C (Node 3)</text>
+  <rect x="640" y="286" width="270" height="24" rx="6" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="775" y="302" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#059669">labels: { app: web, tier: frontend }</text>
+</svg>

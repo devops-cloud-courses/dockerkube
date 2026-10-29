@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" width="960" height="440" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <rect width="960" height="440" rx="16" fill="#f8fafc"/>
+
+  <!-- Column Headers (Transport Modes) -->
+  <g font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">
+    <rect x="220" y="22" width="134" height="48" rx="8" fill="#1e293b"/>
+    <text x="287" y="51">🚚 Truck</text>
+
+    <rect x="364" y="22" width="134" height="48" rx="8" fill="#1e293b"/>
+    <text x="431" y="51">🚂 Train</text>
+
+    <rect x="508" y="22" width="134" height="48" rx="8" fill="#1e293b"/>
+    <text x="575" y="51">🏗️ Port Crane</text>
+
+    <rect x="652" y="22" width="134" height="48" rx="8" fill="#1e293b"/>
+    <text x="719" y="51">🚢 Cargo Ship</text>
+
+    <rect x="796" y="22" width="138" height="48" rx="8" fill="#1e293b"/>
+    <text x="865" y="51">🏭 Warehouse</text>
+  </g>
+
+  <!-- Row Headers (Goods) -->
+  <g font-size="13" font-weight="800" fill="#92400e" text-anchor="middle">
+    <rect x="26" y="82" width="182" height="56" rx="8" fill="#fffbeb" stroke="#fcd34d" stroke-width="1.5"/>
+    <text x="117" y="115">📦 Wooden Crates</text>
+
+    <rect x="26" y="148" width="182" height="56" rx="8" fill="#fffbeb" stroke="#fcd34d" stroke-width="1.5"/>
+    <text x="117" y="181">🛢️ Chemical Drums</text>
+
+    <rect x="26" y="214" width="182" height="56" rx="8" fill="#fffbeb" stroke="#fcd34d" stroke-width="1.5"/>
+    <text x="117" y="247">🚗 Automobiles</text>
+
+    <rect x="26" y="280" width="182" height="56" rx="8" fill="#fffbeb" stroke="#fcd34d" stroke-width="1.5"/>
+    <text x="117" y="313">🌾 Sacks of Coffee</text>
+
+    <rect x="26" y="346" width="182" height="56" rx="8" fill="#fffbeb" stroke="#fcd34d" stroke-width="1.5"/>
+    <text x="117" y="379">🎹 Grand Pianos</text>
+  </g>
+
+  <!-- Matrix Cells -->
+  <g font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" fill="#dc2626" text-anchor="middle">
+    <!-- Row 1 -->
+    <rect x="220" y="82" width="134" height="56" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="287" y="115">? Hand-load</text>
+    <rect x="364" y="82" width="134" height="56" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="431" y="115">? Restack</text>
+    <rect x="508" y="82" width="134" height="56" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="575" y="115">? Cargo Net</text>
+    <rect x="652" y="82" width="134" height="56" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="719" y="115">? Hold Stow</text>
+    <rect x="796" y="82" width="138" height="56" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="865" y="115">? Pallets</text>
+
+    <!-- Row 2 -->
+    <rect x="220" y="148" width="134" height="56" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="287" y="181">? Hazmat Rack</text>
+    <rect x="364" y="148" width="134" height="56" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="431" y="181">? Tanker / Tie</text>
+    <rect x="508" y="148" width="134" height="56" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="575" y="181">? Barrel Sling</text>
+    <rect x="652" y="148" width="134" height="56" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="719" y="181">? Leak Risk</text>
+    <rect x="796" y="148" width="138" height="56" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="865" y="181">? Spill Zone</text>
+
+    <!-- Row 3 -->
+    <rect x="220" y="214" width="134" height="56" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="287" y="247">? Car Carrier</text>
+    <rect x="364" y="214" width="134" height="56" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="431" y="247">? Auto-Rack</text>
+    <rect x="508" y="214" width="134" height="56" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="575" y="247">? Wheel Cradle</text>
+    <rect x="652" y="214" width="134" height="56" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="719" y="247">? Deck Lash</text>
+    <rect x="796" y="214" width="138" height="56" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="865" y="247">? Garage Bay</text>
+
+    <!-- Row 4 -->
+    <rect x="220" y="280" width="134" height="56" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="287" y="313">? Tarp Cover</text>
+    <rect x="364" y="280" width="134" height="56" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="431" y="313">? Dry Boxcar</text>
+    <rect x="508" y="280" width="134" height="56" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="575" y="313">? Torn Bags</text>
+    <rect x="652" y="280" width="134" height="56" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="719" y="313">? Damp Hold</text>
+    <rect x="796" y="280" width="138" height="56" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="865" y="313">? Odor Mix</text>
+
+    <!-- Row 5 -->
+    <rect x="220" y="346" width="134" height="56" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="287" y="379">? Padded Van</text>
+    <rect x="364" y="346" width="134" height="56" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="431" y="379">? Custom Box</text>
+    <rect x="508" y="346" width="134" height="56" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="575" y="379">? Fragile Lift</text>
+    <rect x="652" y="346" width="134" height="56" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="719" y="379">? Salt Damage</text>
+    <rect x="796" y="346" width="138" height="56" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="865" y="379">? Climate Room</text>
+  </g>
+</svg>

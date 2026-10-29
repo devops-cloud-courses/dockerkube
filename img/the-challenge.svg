@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" width="960" height="440" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="chalBlue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <filter id="chalShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect width="960" height="440" rx="16" fill="#f8fafc"/>
+
+  <!-- Top Half: Multiplicity of Application Stacks -->
+  <rect x="24" y="20" width="912" height="176" rx="16" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <rect x="38" y="34" width="210" height="30" rx="8" fill="url(#chalBlue)"/>
+  <text x="143" y="54" text-anchor="middle" font-size="12" font-weight="800" fill="#ffffff">MULTIPLICITY OF STACKS</text>
+  <text x="916" y="54" text-anchor="end" font-size="12.5" font-weight="700" fill="#1e40af">Do services &amp; dependencies interact safely?</text>
+
+  <g filter="url(#chalShadow)">
+    <rect x="38" y="76" width="168" height="102" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="122" y="104" text-anchor="middle" font-size="13.5" font-weight="800" fill="#0f172a">Static Website</text>
+    <text x="122" y="126" text-anchor="middle" font-size="10.5" font-family="'JetBrains Mono', monospace" fill="#2563eb">NGINX + OpenSSL</text>
+    <text x="122" y="144" text-anchor="middle" font-size="10.5" font-family="'JetBrains Mono', monospace" fill="#64748b">ModSecurity + Alpine</text>
+
+    <rect x="218" y="76" width="168" height="102" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="302" y="104" text-anchor="middle" font-size="13.5" font-weight="800" fill="#0f172a">Web Frontend</text>
+    <text x="302" y="126" text-anchor="middle" font-size="10.5" font-family="'JetBrains Mono', monospace" fill="#2563eb">Node.js 22 + Next.js</text>
+    <text x="302" y="144" text-anchor="middle" font-size="10.5" font-family="'JetBrains Mono', monospace" fill="#64748b">libvips + libc6</text>
+
+    <rect x="398" y="76" width="168" height="102" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="482" y="104" text-anchor="middle" font-size="13.5" font-weight="800" fill="#0f172a">API &amp; Workers</text>
+    <text x="482" y="126" text-anchor="middle" font-size="10.5" font-family="'JetBrains Mono', monospace" fill="#2563eb">Python 3.12 + FastAPI</text>
+    <text x="482" y="144" text-anchor="middle" font-size="10.5" font-family="'JetBrains Mono', monospace" fill="#64748b">Celery + libpq + ffmpeg</text>
+
+    <rect x="578" y="76" width="168" height="102" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="662" y="104" text-anchor="middle" font-size="13.5" font-weight="800" fill="#0f172a">Primary Database</text>
+    <text x="662" y="126" text-anchor="middle" font-size="10.5" font-family="'JetBrains Mono', monospace" fill="#2563eb">PostgreSQL 16</text>
+    <text x="662" y="144" text-anchor="middle" font-size="10.5" font-family="'JetBrains Mono', monospace" fill="#64748b">pgvector + PostGIS</text>
+
+    <rect x="758" y="76" width="164" height="102" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="840" y="104" text-anchor="middle" font-size="13.5" font-weight="800" fill="#0f172a">Queue &amp; Cache</text>
+    <text x="840" y="126" text-anchor="middle" font-size="10.5" font-family="'JetBrains Mono', monospace" fill="#2563eb">Redis + Kafka</text>
+    <text x="840" y="144" text-anchor="middle" font-size="10.5" font-family="'JetBrains Mono', monospace" fill="#64748b">OpenJDK 21 + TLS</text>
+  </g>
+
+  <!-- Center Friction Divider -->
+  <line x1="36" y1="220" x2="924" y2="220" stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="8 6"/>
+  <rect x="370" y="203" width="220" height="34" rx="999" fill="#fef2f2" stroke="#f87171" stroke-width="2"/>
+  <text x="480" y="225" text-anchor="middle" font-size="12.5" font-weight="800" fill="#dc2626">M Stacks × N Environments</text>
+
+  <!-- Bottom Half: Multiplicity of Hardware Environments -->
+  <rect x="24" y="244" width="912" height="176" rx="16" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+  <rect x="38" y="258" width="250" height="30" rx="8" fill="#0f172a"/>
+  <text x="163" y="278" text-anchor="middle" font-size="12" font-weight="800" fill="#ffffff">MULTIPLICITY OF ENVIRONMENTS</text>
+  <text x="916" y="278" text-anchor="end" font-size="12.5" font-weight="700" fill="#334155">Can we migrate &amp; deploy smoothly across all of them?</text>
+
+  <g filter="url(#chalShadow)">
+    <rect x="38" y="302" width="168" height="98" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="122" y="336" text-anchor="middle" font-size="13.5" font-weight="800" fill="#0f172a">Developer Laptop</text>
+    <text x="122" y="360" text-anchor="middle" font-size="11" font-family="'JetBrains Mono', monospace" fill="#64748b">macOS / Windows / Linux</text>
+
+    <rect x="218" y="302" width="168" height="98" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="302" y="336" text-anchor="middle" font-size="13.5" font-weight="800" fill="#0f172a">CI / QA Servers</text>
+    <text x="302" y="360" text-anchor="middle" font-size="11" font-family="'JetBrains Mono', monospace" fill="#64748b">Shared Testing VMs</text>
+
+    <rect x="398" y="302" width="168" height="98" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="482" y="336" text-anchor="middle" font-size="13.5" font-weight="800" fill="#0f172a">On-Prem Data Center</text>
+    <text x="482" y="360" text-anchor="middle" font-size="11" font-family="'JetBrains Mono', monospace" fill="#64748b">Bare-Metal &amp; VMware</text>
+
+    <rect x="578" y="302" width="168" height="98" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="662" y="336" text-anchor="middle" font-size="13.5" font-weight="800" fill="#0f172a">Public Cloud</text>
+    <text x="662" y="360" text-anchor="middle" font-size="11" font-family="'JetBrains Mono', monospace" fill="#64748b">GCP • AWS • Azure</text>
+
+    <rect x="758" y="302" width="164" height="98" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="840" y="336" text-anchor="middle" font-size="13.5" font-weight="800" fill="#0f172a">Edge &amp; Customer</text>
+    <text x="840" y="360" text-anchor="middle" font-size="11" font-family="'JetBrains Mono', monospace" fill="#64748b">Custom Linux Distros</text>
+  </g>
+</svg>

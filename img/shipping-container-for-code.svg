@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" width="960" height="440" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="dockerGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <marker id="codeArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563eb"/>
+    </marker>
+    <filter id="codeShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="960" height="440" rx="16" fill="#f8fafc"/>
+
+  <!-- Top Row: Any Application Stack -->
+  <g filter="url(#codeShadow)" text-anchor="middle">
+    <rect x="38" y="24" width="168" height="68" rx="12" fill="#ffffff" stroke="#93c5fd" stroke-width="1.5"/>
+    <text x="122" y="52" font-size="13" font-weight="800" fill="#0f172a">Static Website</text>
+    <text x="122" y="72" font-size="10.5" font-family="'JetBrains Mono', monospace" fill="#2563eb">NGINX + OpenSSL</text>
+
+    <rect x="218" y="24" width="168" height="68" rx="12" fill="#ffffff" stroke="#93c5fd" stroke-width="1.5"/>
+    <text x="302" y="52" font-size="13" font-weight="800" fill="#0f172a">Web Frontend</text>
+    <text x="302" y="72" font-size="10.5" font-family="'JetBrains Mono', monospace" fill="#2563eb">Node.js + Next.js</text>
+
+    <rect x="398" y="24" width="168" height="68" rx="12" fill="#ffffff" stroke="#93c5fd" stroke-width="1.5"/>
+    <text x="482" y="52" font-size="13" font-weight="800" fill="#0f172a">API &amp; Workers</text>
+    <text x="482" y="72" font-size="10.5" font-family="'JetBrains Mono', monospace" fill="#2563eb">Python + FastAPI</text>
+
+    <rect x="578" y="24" width="168" height="68" rx="12" fill="#ffffff" stroke="#93c5fd" stroke-width="1.5"/>
+    <text x="662" y="52" font-size="13" font-weight="800" fill="#0f172a">Primary Database</text>
+    <text x="662" y="72" font-size="10.5" font-family="'JetBrains Mono', monospace" fill="#2563eb">PostgreSQL 16</text>
+
+    <rect x="758" y="24" width="164" height="68" rx="12" fill="#ffffff" stroke="#93c5fd" stroke-width="1.5"/>
+    <text x="840" y="52" font-size="13" font-weight="800" fill="#0f172a">Queue &amp; Cache</text>
+    <text x="840" y="72" font-size="10.5" font-family="'JetBrains Mono', monospace" fill="#2563eb">Redis + Kafka</text>
+  </g>
+
+  <!-- Converging Arrows -->
+  <path d="M 122 92 L 360 156" stroke="#2563eb" stroke-width="2.5" marker-end="url(#codeArrow)"/>
+  <path d="M 302 92 L 410 156" stroke="#2563eb" stroke-width="2.5" marker-end="url(#codeArrow)"/>
+  <path d="M 482 92 L 480 156" stroke="#2563eb" stroke-width="2.5" marker-end="url(#codeArrow)"/>
+  <path d="M 662 92 L 550 156" stroke="#2563eb" stroke-width="2.5" marker-end="url(#codeArrow)"/>
+  <path d="M 840 92 L 600 156" stroke="#2563eb" stroke-width="2.5" marker-end="url(#codeArrow)"/>
+
+  <!-- Center: Docker / OCI Container -->
+  <g filter="url(#codeShadow)">
+    <rect x="230" y="162" width="500" height="116" rx="16" fill="url(#dockerGrad)" stroke="#ffffff" stroke-width="3"/>
+    <text x="480" y="204" text-anchor="middle" font-size="19" font-weight="800" fill="#ffffff">🐳 Standardized OCI Container Image</text>
+    <text x="480" y="231" text-anchor="middle" font-size="12.5" font-family="'JetBrains Mono', monospace" fill="#e0f2fe">Code + Runtime + Libraries + OS Dependencies Packaged Together</text>
+    <text x="480" y="254" text-anchor="middle" font-size="12" fill="#bae6fd">Standard CLI operations (build, pull, run, stop) on any Linux host</text>
+  </g>
+
+  <!-- Diverging Arrows -->
+  <path d="M 360 278 L 122 340" stroke="#2563eb" stroke-width="2.5" marker-end="url(#codeArrow)"/>
+  <path d="M 410 278 L 302 340" stroke="#2563eb" stroke-width="2.5" marker-end="url(#codeArrow)"/>
+  <path d="M 480 278 L 482 340" stroke="#2563eb" stroke-width="2.5" marker-end="url(#codeArrow)"/>
+  <path d="M 550 278 L 662 340" stroke="#2563eb" stroke-width="2.5" marker-end="url(#codeArrow)"/>
+  <path d="M 600 278 L 840 340" stroke="#2563eb" stroke-width="2.5" marker-end="url(#codeArrow)"/>
+
+  <!-- Bottom Row: Any Hardware / Cloud Environment -->
+  <g filter="url(#codeShadow)" text-anchor="middle" font-size="13" font-weight="800" fill="#065f46">
+    <rect x="38" y="348" width="168" height="68" rx="12" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="2"/>
+    <text x="122" y="387">💻 Dev Laptop</text>
+
+    <rect x="218" y="348" width="168" height="68" rx="12" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="2"/>
+    <text x="302" y="387">🧪 CI / QA Runners</text>
+
+    <rect x="398" y="348" width="168" height="68" rx="12" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="2"/>
+    <text x="482" y="387">🏢 On-Prem DC</text>
+
+    <rect x="578" y="348" width="168" height="68" rx="12" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="2"/>
+    <text x="662" y="387">☁️ Public Cloud</text>
+
+    <rect x="758" y="348" width="164" height="68" rx="12" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="2"/>
+    <text x="840" y="387">☸️ Kubernetes Prod</text>
+  </g>
+</svg>

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 380" width="960" height="380" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <filter id="cgShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect width="960" height="380" rx="16" fill="#f8fafc"/>
+
+  <!-- Top Row: Hardware Resources -->
+  <g filter="url(#cgShadow)" text-anchor="middle">
+    <!-- CPU -->
+    <rect x="40" y="34" width="200" height="110" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <rect x="64" y="36" width="38" height="106" fill="#fde047" opacity="0.75"/>
+    <rect x="160" y="36" width="52" height="106" fill="#c4b5fd" opacity="0.75"/>
+    <text x="140" y="84" font-size="18" font-weight="800" fill="#0f172a">CPU</text>
+    <text x="140" y="108" font-size="11.5" font-family="'JetBrains Mono', monospace" fill="#475569">Cores &amp; Cycles</text>
+
+    <!-- MEMORY -->
+    <rect x="266" y="34" width="200" height="110" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <rect x="290" y="36" width="34" height="106" fill="#c4b5fd" opacity="0.75"/>
+    <rect x="372" y="36" width="64" height="106" fill="#fde047" opacity="0.75"/>
+    <text x="366" y="84" font-size="18" font-weight="800" fill="#0f172a">MEMORY</text>
+    <text x="366" y="108" font-size="11.5" font-family="'JetBrains Mono', monospace" fill="#475569">RAM &amp; Swap</text>
+
+    <!-- NETWORK -->
+    <rect x="492" y="34" width="200" height="110" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <rect x="524" y="36" width="52" height="106" fill="#fde047" opacity="0.75"/>
+    <rect x="596" y="36" width="62" height="106" fill="#c4b5fd" opacity="0.75"/>
+    <text x="592" y="84" font-size="18" font-weight="800" fill="#0f172a">NETWORK</text>
+    <text x="592" y="108" font-size="11.5" font-family="'JetBrains Mono', monospace" fill="#475569">Bandwidth I/O</text>
+
+    <!-- STORAGE I/O -->
+    <rect x="718" y="34" width="200" height="110" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <rect x="748" y="36" width="44" height="106" fill="#c4b5fd" opacity="0.75"/>
+    <rect x="802" y="36" width="76" height="106" fill="#fde047" opacity="0.75"/>
+    <text x="818" y="84" font-size="18" font-weight="800" fill="#0f172a">STORAGE I/O</text>
+    <text x="818" y="108" font-size="11.5" font-family="'JetBrains Mono', monospace" fill="#475569">Disk Read / Write</text>
+  </g>
+
+  <!-- Vertical Resource Allocation Columns -->
+  <!-- Cgroup 1 (Yellow) vertical bars -->
+  <rect x="64" y="144" width="38" height="84" fill="#fde047" opacity="0.55"/>
+  <rect x="372" y="144" width="64" height="84" fill="#fde047" opacity="0.55"/>
+  <rect x="524" y="144" width="52" height="84" fill="#fde047" opacity="0.55"/>
+  <rect x="802" y="144" width="76" height="84" fill="#fde047" opacity="0.55"/>
+
+  <!-- Cgroup 2 (Purple) vertical bars -->
+  <rect x="160" y="144" width="52" height="154" fill="#c4b5fd" opacity="0.55"/>
+  <rect x="290" y="144" width="34" height="154" fill="#c4b5fd" opacity="0.55"/>
+  <rect x="596" y="144" width="62" height="154" fill="#c4b5fd" opacity="0.55"/>
+  <rect x="748" y="144" width="44" height="154" fill="#c4b5fd" opacity="0.55"/>
+
+  <!-- Horizontal Cgroup Bars -->
+  <g filter="url(#cgShadow)" text-anchor="middle">
+    <rect x="40" y="228" width="878" height="54" rx="12" fill="#fef08a" stroke="#eab308" stroke-width="2"/>
+    <text x="479" y="261" font-size="16" font-weight="800" fill="#713f12">CGROUP #1 — Critical Web Service (Guaranteed Resource Slice)</text>
+
+    <rect x="40" y="298" width="878" height="54" rx="12" fill="#ede9fe" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="479" y="331" font-size="16" font-weight="800" fill="#4c1d95">CGROUP #2 — Background Batch Worker (Capped Resource Quota)</text>
+  </g>
+</svg>

@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" font-family="'Inter', -apple-system, BlinkMacSystemFont, sans-serif">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.06"/>
+    </filter>
+    <marker id="arrowSlate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <rect width="960" height="360" rx="16" fill="#f8fafc"/>
+
+  <!-- Worker Node Wrapper -->
+  <rect x="30" y="25" width="900" height="310" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="55" y="13" width="210" height="24" rx="12" fill="#0f172a"/>
+  <text x="160" y="29" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff" letter-spacing="0.5">KUBERNETES WORKER NODE</text>
+
+  <!-- Pod 1 (Single container + Volume) -->
+  <rect x="60" y="55" width="380" height="255" rx="14" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+  <rect x="80" y="44" width="130" height="22" rx="11" fill="#2563eb"/>
+  <text x="145" y="59" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">POD: web-frontend</text>
+  <rect x="295" y="68" width="125" height="22" rx="6" fill="#dbeafe"/>
+  <text x="357" y="83" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#1d4ed8">IP: 10.244.1.14</text>
+
+  <!-- App Container -->
+  <rect x="85" y="100" width="200" height="125" rx="10" fill="#ffffff" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="185" y="130" text-anchor="middle" font-size="13" font-weight="800" fill="#1e3a8a">App Container</text>
+  <text x="185" y="152" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="11" fill="#2563eb">nginx:1.27</text>
+  <text x="185" y="176" text-anchor="middle" font-size="11" fill="#64748b">Port: <tspan font-family="'JetBrains Mono', monospace" font-weight="700" fill="#0f172a">:80</tspan></text>
+  <text x="185" y="200" text-anchor="middle" font-size="10" fill="#059669" font-weight="600">Mounts /usr/share/nginx</text>
+
+  <!-- Shared Volume -->
+  <rect x="305" y="115" width="115" height="95" rx="10" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="362" y="148" text-anchor="middle" font-size="12" font-weight="800" fill="#92400e">Pod Volume</text>
+  <text x="362" y="168" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#b45309">emptyDir / PVC</text>
+  <text x="362" y="188" text-anchor="middle" font-size="10" fill="#78350f">Shared disk</text>
+
+  <line x1="285" y1="162" x2="303" y2="162" stroke="#64748b" stroke-width="1.5" stroke-dasharray="3 2" marker-end="url(#arrowSlate)"/>
+
+  <!-- Shared netns footer -->
+  <rect x="85" y="242" width="335" height="48" rx="8" fill="#dbeafe"/>
+  <text x="252" y="263" text-anchor="middle" font-size="11" font-weight="700" fill="#1e40af">Shared Network Namespace (eth0 / localhost)</text>
+  <text x="252" y="280" text-anchor="middle" font-size="10" fill="#1d4ed8">Shared IPC &amp; UTS namespaces across all containers in Pod</text>
+
+  <!-- Pod 2 (Multi-container + Sidecar) -->
+  <rect x="480" y="55" width="420" height="255" rx="14" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+  <rect x="500" y="44" width="150" height="22" rx="11" fill="#059669"/>
+  <text x="575" y="59" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">POD: api-with-sidecar</text>
+  <rect x="755" y="68" width="125" height="22" rx="6" fill="#d1fae5"/>
+  <text x="817" y="83" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#065f46">IP: 10.244.1.15</text>
+
+  <!-- Main Container -->
+  <rect x="500" y="100" width="145" height="125" rx="10" fill="#ffffff" stroke="#34d399" stroke-width="1.5"/>
+  <text x="572" y="128" text-anchor="middle" font-size="12" font-weight="800" fill="#065f46">Main App</text>
+  <text x="572" y="148" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="11" fill="#059669">api-server:v2</text>
+  <text x="572" y="172" text-anchor="middle" font-size="10" fill="#475569">Listens on</text>
+  <text x="572" y="190" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#0f172a">localhost:8080</text>
+
+  <!-- Sidecar Container -->
+  <rect x="660" y="100" width="120" height="125" rx="10" fill="#ffffff" stroke="#34d399" stroke-width="1.5"/>
+  <text x="720" y="128" text-anchor="middle" font-size="12" font-weight="800" fill="#065f46">Sidecar</text>
+  <text x="720" y="148" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#059669">envoy / agent</text>
+  <text x="720" y="172" text-anchor="middle" font-size="10" fill="#475569">Talks via</text>
+  <text x="720" y="190" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#0f172a">localhost</text>
+
+  <!-- Shared Volume in Pod 2 -->
+  <rect x="795" y="115" width="85" height="95" rx="10" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="837" y="150" text-anchor="middle" font-size="11" font-weight="800" fill="#92400e">Shared</text>
+  <text x="837" y="166" text-anchor="middle" font-size="11" font-weight="800" fill="#92400e">Logs</text>
+  <text x="837" y="186" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#b45309">/var/log</text>
+
+  <!-- Shared netns footer Pod 2 -->
+  <rect x="500" y="242" width="380" height="48" rx="8" fill="#d1fae5"/>
+  <text x="690" y="263" text-anchor="middle" font-size="11" font-weight="700" fill="#065f46">Shared Network Namespace (10.244.1.15)</text>
+  <text x="690" y="280" text-anchor="middle" font-size="10" fill="#047857">Containers communicate over loopback without NAT</text>
+</svg>
