@@ -67,12 +67,6 @@
 
 ----
 
-### Docker — Architecture & Workflow
-
-<img src="img/basics-of-docker-system.svg" alt="Docker Architecture" width="1120" height="498" />
-
-----
-
 ### Cgroups (Control Groups)
 
 - **Control Groups (`cgroups v2`)** are a Linux kernel feature that **limits, accounts for, and isolates** hardware resource usage across process groups:
@@ -130,6 +124,12 @@
 
 ----
 
+### Docker — Architecture & Workflow
+
+<img src="img/basics-of-docker-system.svg" alt="Docker Architecture" width="1120" height="498" />
+
+----
+
 ### Image Layers & Copy-on-Write (`OverlayFS`)
 
 <img src="img/container-layers.svg" alt="Container Layers" width="1120" height="497" />
@@ -148,20 +148,6 @@ postgres     16        afe2b5e1859b   2 days ago   432MB
 ubuntu       24.04     07c86167cdc4   4 days ago   78.1MB
 redis        7-alpine  4f5f397d4b7c   5 days ago   41.2MB
 nginx        1.27      ddd5c9c1d0f2   6 days ago   188MB
-```
-
-----
-
-### Container
-
-- A **container** is a runnable instance of an image: an isolated group of processes with a thin **read-write layer** on top of the read-only image layers
-
-```bash [1|3-5]
-$ docker ps
-
-CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                  NAMES
-4c01db0b339c   ubuntu:24.04   "bash"                   17 seconds ago   Up 16 seconds   3300-3310/tcp          webapp
-d7886598dbe2   redis:7-alpine "docker-entrypoint.s…"   33 minutes ago   Up 33 minutes   0.0.0.0:6379->6379/tcp redis
 ```
 
 ----
@@ -196,6 +182,20 @@ $ docker build -t myimage:latest .
  => => exporting layers                                                    0.1s
  => => writing image sha256:d5933f3c9702a6694011a39f22aef4f1b91b           0.0s
  => => naming to docker.io/library/myimage:latest                          0.0s
+```
+
+----
+
+### Container
+
+- A **container** is a runnable instance of an image: an isolated group of processes with a thin **read-write layer** on top of the read-only image layers
+
+```bash [1|3-5]
+$ docker ps
+
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                  NAMES
+4c01db0b339c   ubuntu:24.04   "bash"                   17 seconds ago   Up 16 seconds   3300-3310/tcp          webapp
+d7886598dbe2   redis:7-alpine "docker-entrypoint.s…"   33 minutes ago   Up 33 minutes   0.0.0.0:6379->6379/tcp redis
 ```
 
 ----
