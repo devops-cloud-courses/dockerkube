@@ -32,8 +32,8 @@
 ### Declarative YAML Manifest Structure
 
 - Every Kubernetes resource is declared using four required root fields:
-  - **`apiVersion`** — Which version of the Kubernetes API defines this object (`v1`, `apps/v1`, `networking.k8s.io/v1`)
-  - **`kind`** — What type of object you want to create (`Pod`, `Deployment`, `Service`, `Ingress`)
+  - **`apiVersion`** — Which version of the Kubernetes API defines this object (`v1`, `apps/v1`, `gateway.networking.k8s.io/v1`)
+  - **`kind`** — What type of object you want to create (`Pod`, `Deployment`, `Service`, `HTTPRoute`)
   - **`metadata`** — Data that uniquely identifies the object (`name`, `namespace`, `labels`, `annotations`)
   - **`spec`** — The **desired state** for the object (containers, replicas, ports, routing rules)
 
@@ -59,7 +59,7 @@ metadata:
 spec:
   containers:
     - name: nginx
-      image: nginx:1.27
+      image: nginx:1.28
       ports:
         - containerPort: 80
       resources:
@@ -98,7 +98,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: nginx:1.27
+          image: nginx:1.28
           ports:
             - containerPort: 80
 ```
@@ -210,13 +210,13 @@ spec:
 
 ### Ingress & Gateway API
 
-- **Ingress** (and its modern successor, the **Gateway API**) exposes `HTTP` and `HTTPS` routes from outside the cluster to internal Services
-- Managed by an Ingress/Gateway controller (`NGINX`, `Envoy`, `Traefik`, or Cloud Load Balancers)
-- Provides `L7` host/path routing, **TLS/SSL termination**, and virtual hosting under a single external IP
+- Exposes `HTTP` and `HTTPS` routes from outside the cluster to internal Services (`L7` host/path routing, **TLS termination**, traffic splitting)
+- **Ingress (`networking.k8s.io/v1`)**: The classic Kubernetes routing API — now feature-frozen (`ingress-nginx` retired by SIG Network)
+- **Gateway API (`gateway.networking.k8s.io/v1`)**: The modern, role-oriented standard (`GatewayClass`, `Gateway`, `HTTPRoute`) backed by `Envoy Gateway`, `Cilium`, `Traefik`, `NGINX Gateway Fabric`, and Cloud LBs
 
 ----
 
-### Ingress — Manifest Example
+### Ingress — Manifest Example (Legacy `v1`)
 
 ```yaml [1-4|5-9|10-19]
 apiVersion: networking.k8s.io/v1
@@ -224,7 +224,7 @@ kind: Ingress
 metadata:
   name: web-ingress
 spec:
-  ingressClassName: nginx
+  ingressClassName: traefik
   tls:
     - hosts: [app.example.com]
       secretName: app-tls-cert
@@ -243,10 +243,35 @@ spec:
 
 ----
 
+### Gateway API (`HTTPRoute`) — Manifest Example
+
+```yaml [1-4|5-9|10-18]
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: web-route
+spec:
+  parentRefs:
+    - name: prod-gateway
+  hostnames:
+    - "app.example.com"
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+      backendRefs:
+        - name: web-service
+          port: 80
+```
+
+----
+
 ### Service Mesh
 
 - A **Service Mesh** (`Istio`, `Linkerd`, `Cilium`) manages **East–West** communication between microservices transparently without changing application code
 - Provides **strict Mutual TLS (`mTLS`)**, canary traffic splitting, automatic retries, circuit breaking, and distributed tracing
+- Deployed via **per-Pod sidecars** (`Envoy`, `linkerd2-proxy`) or modern **sidecarless / ambient node proxies** (`Istio Ambient Mode ztunnel`, `Cilium eBPF`)
 
 ----
 
@@ -331,14 +356,14 @@ data:
 ### Helm — The Kubernetes Package Manager
 
 - **Helm** is the package manager for Kubernetes — the equivalent of `apt`, `brew`, or `yum` for cloud-native applications
-- Packages templated Kubernetes manifests into reusable **Charts** (`Chart.yaml`, `values.yaml`, `templates/`) distributed via HTTP or `OCI` registries
-- **Helm v3** is purely client-side (no in-cluster `Tiller` daemon) and respects native Kubernetes `RBAC`
+- Packages templated Kubernetes manifests into reusable **Charts** (`Chart.yaml`, `values.yaml`, `templates/`) distributed via `OCI` registries (`oci://`) or HTTP repos
+- **Client-only architecture** (no in-cluster `Tiller` daemon): renders templates locally and applies them directly via the Kubernetes API using native `RBAC`
 
 ----
 
-### Helm v3 Architecture
+### Helm Architecture
 
-<img src="img/helm-v3-architecture.svg" alt="Helm v3 Architecture" width="1120" height="454" />
+<img src="img/helm-v3-architecture.svg" alt="Helm Architecture" width="1120" height="454" />
 
 ----
 
@@ -355,7 +380,7 @@ data:
 ### Monitoring & Alerting
 
 - Cloud-native monitoring relies on **Prometheus**, **Grafana**, and **OpenTelemetry** to scrape metrics from nodes, control-plane components, and application `/metrics` endpoints
-- **Alertmanager** routes alerts to `Slack`, `PagerDuty`, or `Opsgenie` when SLOs are breached
+- **Alertmanager** routes alerts to `Slack`, `PagerDuty`, `Grafana OnCall`, or `incident.io` when SLOs are breached
 
 ----
 

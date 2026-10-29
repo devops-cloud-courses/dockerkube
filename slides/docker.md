@@ -144,10 +144,10 @@
 $ docker image ls
 
 REPOSITORY   TAG       IMAGE ID       CREATED      SIZE
-postgres     16        afe2b5e1859b   2 days ago   432MB
+postgres     17        afe2b5e1859b   2 days ago   438MB
 ubuntu       24.04     07c86167cdc4   4 days ago   78.1MB
-redis        7-alpine  4f5f397d4b7c   5 days ago   41.2MB
-nginx        1.27      ddd5c9c1d0f2   6 days ago   188MB
+redis        8-alpine  4f5f397d4b7c   5 days ago   42.4MB
+nginx        1.28      ddd5c9c1d0f2   6 days ago   192MB
 ```
 
 ----
@@ -195,7 +195,7 @@ $ docker ps
 
 CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                  NAMES
 4c01db0b339c   ubuntu:24.04   "bash"                   17 seconds ago   Up 16 seconds   3300-3310/tcp          webapp
-d7886598dbe2   redis:7-alpine "docker-entrypoint.s…"   33 minutes ago   Up 33 minutes   0.0.0.0:6379->6379/tcp redis
+d7886598dbe2   redis:8-alpine "docker-entrypoint.s…"   33 minutes ago   Up 33 minutes   0.0.0.0:6379->6379/tcp redis
 ```
 
 ----
@@ -216,12 +216,12 @@ Hello from my containerized app!
 - `-i` (`--interactive`) keeps `STDIN` open and `-t` (`--tty`) allocates a pseudo-terminal
 
 ```bash [1|2-6|7]
-$ docker run -it debian:bookworm bash
-Unable to find image 'debian:bookworm' locally
-bookworm: Pulling from library/debian
+$ docker run -it debian:trixie bash
+Unable to find image 'debian:trixie' locally
+trixie: Pulling from library/debian
 05d1a5232b46: Pull complete
 Digest: sha256:07fe888a6090482fc6e930c1282d1edf67998a39a09a0b339242fbfa2b602fff
-Status: Downloaded newer image for debian:bookworm
+Status: Downloaded newer image for debian:trixie
 root@d6c0fe130dba:/#
 ```
 
@@ -232,14 +232,14 @@ root@d6c0fe130dba:/#
 - `-d` (`--detach`) runs the container in the background and prints its container ID
 
 ```bash [1|2]
-$ docker run -d nginx:1.27
+$ docker run -d nginx:1.28
 96d899b862b6c2d265e8523335d8b1cb34cfff2a1d31c3253f431990d9c889a7
 ```
 
 ```bash [1|2-3]
 $ docker ps
 CONTAINER ID   IMAGE        COMMAND                  CREATED         STATUS         PORTS     NAMES
-96d899b862b6   nginx:1.27   "/docker-entrypoint.…"   5 seconds ago   Up 4 seconds   80/tcp    stupefied_mclaren
+96d899b862b6   nginx:1.28   "/docker-entrypoint.…"   5 seconds ago   Up 4 seconds   80/tcp    stupefied_mclaren
 ```
 
 ----
@@ -252,7 +252,7 @@ CONTAINER ID   IMAGE        COMMAND                  CREATED         STATUS     
 $ docker run -d \
     -e POSTGRES_USER='bar' \
     -e POSTGRES_PASSWORD='foo' \
-    postgres:16
+    postgres:17
 ```
 
 ----
@@ -262,7 +262,7 @@ $ docker run -d \
 - By default, containers run in an isolated network namespace. Use `-p <host_port>:<container_port>` to publish a container port on the host
 
 ```bash
-$ docker run -d -p 8080:80 nginx:1.27
+$ docker run -d -p 8080:80 nginx:1.28
 ```
 
 - Requests to `http://localhost:8080` on the host are forwarded to port `80` inside the container
@@ -274,7 +274,7 @@ $ docker run -d -p 8080:80 nginx:1.27
 - Container filesystems are ephemeral. To persist data beyond the container lifecycle, mount a **Docker Volume**
 
 ```bash
-$ docker run -d -v myvol2:/app nginx:1.27
+$ docker run -d -v myvol2:/app nginx:1.28
 ```
 
 ```json
@@ -316,7 +316,7 @@ Mon Oct 29 16:40:02 UTC 2026
 ```yaml [1|2-8|9-16|17-18]
 services:
   db:
-    image: postgres:16
+    image: postgres:17
     volumes:
       - db_data:/var/lib/postgresql/data
     environment:

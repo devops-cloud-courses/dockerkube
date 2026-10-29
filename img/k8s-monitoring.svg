@@ -80,5 +80,5 @@
   <text x="817" y="260" text-anchor="middle" font-size="15" font-weight="800" fill="#991b1b">Alertmanager</text>
   <text x="817" y="285" text-anchor="middle" font-size="12" fill="#475569">Deduplicates, groups &amp; routes</text>
   <rect x="720" y="302" width="195" height="42" rx="8" fill="#fef2f2" stroke="#fecaca"/>
-  <text x="817" y="327" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" fill="#dc2626">Slack · PagerDuty · Opsgenie</text>
+  <text x="817" y="327" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" fill="#dc2626">Slack · PagerDuty · OnCall</text>
 </svg>

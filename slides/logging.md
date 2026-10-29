@@ -12,7 +12,7 @@
 
 ### Node Logging Agent (`DaemonSet`)
 
-- A node-level logging agent (`Fluent Bit`, `Vector`, `Promtail`) runs as a `DaemonSet` and ships logs to a central backend
+- A node-level logging agent (`Fluent Bit`, `Vector`, `Grafana Alloy`, `OTel Collector`) runs as a `DaemonSet` and ships logs to a central backend
 
 <img src="img/k8s-logging-agent.svg" alt="Node Logging Agent" width="1120" height="379" />
 

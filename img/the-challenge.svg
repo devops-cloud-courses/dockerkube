@@ -30,12 +30,12 @@
 
     <rect x="398" y="76" width="168" height="102" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
     <text x="482" y="104" text-anchor="middle" font-size="14" font-weight="800" fill="#0f172a">API &amp; Workers</text>
-    <text x="482" y="126" text-anchor="middle" font-size="11.5" font-family="'JetBrains Mono', monospace" fill="#2563eb">Python 3.12 + FastAPI</text>
+    <text x="482" y="126" text-anchor="middle" font-size="11.5" font-family="'JetBrains Mono', monospace" fill="#2563eb">Python 3.13 + FastAPI</text>
     <text x="482" y="144" text-anchor="middle" font-size="11.5" font-family="'JetBrains Mono', monospace" fill="#64748b">Celery + libpq + ffmpeg</text>
 
     <rect x="578" y="76" width="168" height="102" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
     <text x="662" y="104" text-anchor="middle" font-size="14" font-weight="800" fill="#0f172a">Primary Database</text>
-    <text x="662" y="126" text-anchor="middle" font-size="11.5" font-family="'JetBrains Mono', monospace" fill="#2563eb">PostgreSQL 16</text>
+    <text x="662" y="126" text-anchor="middle" font-size="11.5" font-family="'JetBrains Mono', monospace" fill="#2563eb">PostgreSQL 17</text>
     <text x="662" y="144" text-anchor="middle" font-size="11.5" font-family="'JetBrains Mono', monospace" fill="#64748b">pgvector + PostGIS</text>
 
     <rect x="758" y="76" width="164" height="102" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>

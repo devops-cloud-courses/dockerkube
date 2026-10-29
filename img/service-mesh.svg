@@ -31,7 +31,7 @@
     <text x="182" y="122" text-anchor="middle" font-size="12.5" font-family="'JetBrains Mono', monospace" fill="#64748b">Plain HTTP on localhost</text>
 
     <rect x="58" y="160" width="248" height="74" rx="12" fill="url(#meshProxyGrad)"/>
-    <text x="182" y="191" text-anchor="middle" font-size="14.5" font-weight="800" fill="#ffffff">Sidecar / Node Proxy (Envoy)</text>
+    <text x="182" y="191" text-anchor="middle" font-size="13.5" font-weight="800" fill="#ffffff">Sidecar (Envoy) / Node (ztunnel)</text>
     <text x="182" y="213" text-anchor="middle" font-size="12" font-family="'JetBrains Mono', monospace" fill="#dbeafe">mTLS • Retries • Telemetry</text>
   </g>
 
@@ -45,7 +45,7 @@
     <text x="778" y="122" text-anchor="middle" font-size="12.5" font-family="'JetBrains Mono', monospace" fill="#64748b">Plain HTTP on localhost</text>
 
     <rect x="654" y="160" width="248" height="74" rx="12" fill="url(#meshProxyGrad)"/>
-    <text x="778" y="191" text-anchor="middle" font-size="14.5" font-weight="800" fill="#ffffff">Sidecar / Node Proxy (Envoy)</text>
+    <text x="778" y="191" text-anchor="middle" font-size="13.5" font-weight="800" fill="#ffffff">Sidecar (Envoy) / Node (ztunnel)</text>
     <text x="778" y="213" text-anchor="middle" font-size="12" font-family="'JetBrains Mono', monospace" fill="#dbeafe">mTLS • L7 AuthZ • Circuit Breaker</text>
   </g>
 

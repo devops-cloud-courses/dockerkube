@@ -29,7 +29,7 @@
     <rect x="258" y="90" width="162" height="28" rx="6" fill="#dbeafe"/>
     <text x="339" y="109" font-size="12.5" font-weight="800" fill="#1d4ed8">CONTAINER #1</text>
     <text x="339" y="142" font-size="15" font-weight="800" fill="#0f172a">Voting Web App</text>
-    <text x="339" y="166" font-size="12.5" font-family="'JetBrains Mono', monospace" fill="#475569">Python 3.12 + Flask</text>
+    <text x="339" y="166" font-size="12.5" font-family="'JetBrains Mono', monospace" fill="#475569">Python 3.13 + Flask</text>
 
     <!-- Node.js Results App Container -->
     <rect x="242" y="226" width="194" height="118" rx="14" fill="#ffffff" stroke="#10b981" stroke-width="2"/>
@@ -43,14 +43,14 @@
     <rect x="504" y="90" width="152" height="28" rx="6" fill="#ffe4e6"/>
     <text x="580" y="109" font-size="12.5" font-weight="800" fill="#be123c">CONTAINER #3</text>
     <text x="580" y="142" font-size="15" font-weight="800" fill="#0f172a">In-Memory Queue</text>
-    <text x="580" y="166" font-size="12.5" font-family="'JetBrains Mono', monospace" fill="#475569">redis:7-alpine</text>
+    <text x="580" y="166" font-size="12.5" font-family="'JetBrains Mono', monospace" fill="#475569">redis:8-alpine</text>
 
     <!-- PostgreSQL DB Container -->
     <rect x="488" y="226" width="184" height="142" rx="14" fill="#ffffff" stroke="#6366f1" stroke-width="2"/>
     <rect x="504" y="240" width="152" height="28" rx="6" fill="#e0e7ff"/>
     <text x="580" y="259" font-size="12.5" font-weight="800" fill="#4338ca">CONTAINER #4</text>
     <text x="580" y="290" font-size="15" font-weight="800" fill="#0f172a">PostgreSQL DB</text>
-    <text x="580" y="312" font-size="12.5" font-family="'JetBrains Mono', monospace" fill="#475569">postgres:16</text>
+    <text x="580" y="312" font-size="12.5" font-family="'JetBrains Mono', monospace" fill="#475569">postgres:17</text>
     <rect x="508" y="324" width="144" height="30" rx="6" fill="#f1f5f9" stroke="#94a3b8"/>
     <text x="580" y="344" font-size="11.5" font-family="'JetBrains Mono', monospace" font-weight="700" fill="#334155">💾 Volume: db-data</text>
 

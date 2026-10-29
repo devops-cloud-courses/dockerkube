@@ -58,10 +58,10 @@
     <text x="392" y="257" font-size="13" font-family="'JetBrains Mono', monospace" font-weight="700" fill="#1d4ed8">ubuntu:24.04</text>
 
     <rect x="330" y="282" width="124" height="40" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
-    <text x="392" y="307" font-size="13" font-family="'JetBrains Mono', monospace" font-weight="700" fill="#1d4ed8">nginx:1.27</text>
+    <text x="392" y="307" font-size="13" font-family="'JetBrains Mono', monospace" font-weight="700" fill="#1d4ed8">nginx:1.28</text>
 
     <rect x="330" y="332" width="124" height="40" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
-    <text x="392" y="357" font-size="13" font-family="'JetBrains Mono', monospace" font-weight="700" fill="#1d4ed8">postgres:16</text>
+    <text x="392" y="357" font-size="13" font-family="'JetBrains Mono', monospace" font-weight="700" fill="#1d4ed8">postgres:17</text>
 
     <!-- Running Containers Box -->
     <rect x="488" y="168" width="160" height="224" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
