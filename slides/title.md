@@ -21,3 +21,23 @@
 </div>
 
 </div>
+
+---
+
+### Who are we?
+
+<div class="author-card">
+  <blockquote>
+    <strong>Laurent Grangeau</strong><br />
+    Cloud Solution Architect @ Google
+  </blockquote>
+  <img class="avatar" src="img/avatar.jpg" alt="Laurent Grangeau" />
+</div>
+
+<div class="author-card">
+  <blockquote>
+    <strong>Arthur Mauvezin</strong><br />
+    DevOps Engineer @ Ouidou Consulting
+  </blockquote>
+  <img class="avatar" src="img/avatar-arthur.jpg" alt="Arthur Mauvezin" />
+</div>
