@@ -662,3 +662,20 @@
   bottom: 20px;
   box-shadow: var(--shadow-sm);
 }
+
+/* PDF Export overrides (ensure full code readability & background preservation) */
+html.print-pdf,
+html.print-pdf body,
+html.print-pdf .reveal pre,
+html.print-pdf .reveal pre code {
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+html.print-pdf .reveal pre code.has-highlights tr:not(.highlight-line) {
+  opacity: 1 !important;
+}
+
+html.print-pdf .reveal pre code.has-highlights tr.highlight-line {
+  background: transparent !important;
+}

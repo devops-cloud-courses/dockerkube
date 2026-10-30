@@ -3,6 +3,7 @@
 An interactive presentation on **Containers, Docker, Kubernetes, Observability, and Service Mesh**, powered by [Reveal.js 6.0.2](https://revealjs.com/).
 
 * **Live Presentation:** [https://devops-cloud-courses.github.io/dockerkube](https://devops-cloud-courses.github.io/dockerkube)
+* **Download Latest PDF:** [docker-kubernetes-in-a-nutshell.pdf](https://github.com/devops-cloud-courses/dockerkube/releases/latest/download/docker-kubernetes-in-a-nutshell.pdf)
 * **PDF Export View:** [https://devops-cloud-courses.github.io/dockerkube/?print-pdf&pdfSeparateFragments=false](https://devops-cloud-courses.github.io/dockerkube/?print-pdf&pdfSeparateFragments=false)
 
 ---
